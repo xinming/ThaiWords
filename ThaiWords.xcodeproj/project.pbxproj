@@ -1,0 +1,261 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17827187145861B900F47964 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827186145861B900F47964 /* UIKit.framework */; };
+		17827189145861B900F47964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827188145861B900F47964 /* Foundation.framework */; };
+		1782718B145861B900F47964 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1782718A145861B900F47964 /* CoreGraphics.framework */; };
+		17827191145861B900F47964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1782718F145861B900F47964 /* InfoPlist.strings */; };
+		17827193145861B900F47964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17827192145861B900F47964 /* main.m */; };
+		17827197145861B900F47964 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17827196145861B900F47964 /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		17827182145861B900F47964 /* ThaiWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17827186145861B900F47964 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		17827188145861B900F47964 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1782718A145861B900F47964 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1782718E145861B900F47964 /* ThaiWords-Info.plist */ = {isa = PBXFileReference; path = "ThaiWords-Info.plist"; sourceTree = "<group>"; };
+		17827190145861B900F47964 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		17827192145861B900F47964 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		17827194145861B900F47964 /* ThaiWords-Prefix.pch */ = {isa = PBXFileReference; path = "ThaiWords-Prefix.pch"; sourceTree = "<group>"; };
+		17827195145861B900F47964 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		17827196145861B900F47964 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1782717F145861B900F47964 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17827187145861B900F47964 /* UIKit.framework in Frameworks */,
+				17827189145861B900F47964 /* Foundation.framework in Frameworks */,
+				1782718B145861B900F47964 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		17827177145861B900F47964 = {
+			isa = PBXGroup;
+			children = (
+				1782718C145861B900F47964 /* ThaiWords */,
+				17827185145861B900F47964 /* Frameworks */,
+				17827183145861B900F47964 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		17827183145861B900F47964 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				17827182145861B900F47964 /* ThaiWords.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17827185145861B900F47964 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17827186145861B900F47964 /* UIKit.framework */,
+				17827188145861B900F47964 /* Foundation.framework */,
+				1782718A145861B900F47964 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1782718C145861B900F47964 /* ThaiWords */ = {
+			isa = PBXGroup;
+			children = (
+				17827195145861B900F47964 /* AppDelegate.h */,
+				17827196145861B900F47964 /* AppDelegate.m */,
+				1782718D145861B900F47964 /* Supporting Files */,
+			);
+			path = ThaiWords;
+			sourceTree = "<group>";
+		};
+		1782718D145861B900F47964 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1782718E145861B900F47964 /* ThaiWords-Info.plist */,
+				1782718F145861B900F47964 /* InfoPlist.strings */,
+				17827192145861B900F47964 /* main.m */,
+				17827194145861B900F47964 /* ThaiWords-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		17827181145861B900F47964 /* ThaiWords */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1782719A145861B900F47964 /* Build configuration list for PBXNativeTarget "ThaiWords" */;
+			buildPhases = (
+				1782717E145861B900F47964 /* Sources */,
+				1782717F145861B900F47964 /* Frameworks */,
+				17827180145861B900F47964 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThaiWords;
+			productName = ThaiWords;
+			productReference = 17827182145861B900F47964 /* ThaiWords.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		17827179145861B900F47964 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 1782717C145861B900F47964 /* Build configuration list for PBXProject "ThaiWords" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 17827177145861B900F47964;
+			productRefGroup = 17827183145861B900F47964 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				17827181145861B900F47964 /* ThaiWords */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		17827180145861B900F47964 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17827191145861B900F47964 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1782717E145861B900F47964 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17827193145861B900F47964 /* main.m in Sources */,
+				17827197145861B900F47964 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1782718F145861B900F47964 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17827190145861B900F47964 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17827198145861B900F47964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		17827199145861B900F47964 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1782719B145861B900F47964 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThaiWords/ThaiWords-Prefix.pch";
+				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1782719C145861B900F47964 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThaiWords/ThaiWords-Prefix.pch";
+				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1782717C145861B900F47964 /* Build configuration list for PBXProject "ThaiWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17827198145861B900F47964 /* Debug */,
+				17827199145861B900F47964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1782719A145861B900F47964 /* Build configuration list for PBXNativeTarget "ThaiWords" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1782719B145861B900F47964 /* Debug */,
+				1782719C145861B900F47964 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 17827179145861B900F47964 /* Project object */;
+}
