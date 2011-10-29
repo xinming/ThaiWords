@@ -30,12 +30,16 @@
 #import <RestKit/RestKit.h>
 #import "SVProgressHUD.h"
 
-@interface RootViewController : UITableViewController <RKObjectLoaderDelegate> {
+@interface RootViewController : UITableViewController <RKObjectLoaderDelegate, UIAlertViewDelegate> {
 }
 
 @property (nonatomic, retain) NSMutableArray* thaiWords;
 @property (nonatomic, assign) int page;
-- (void) create;
+@property (nonatomic, assign) BOOL isCompleted;
+@property (nonatomic, retain) UIAlertView * alertBox;
+- (id)initWithName:(NSString *)name completed:(BOOL)completed;
 - (void)index:(NSNumber*) page;
+- (void)addWord;
+
 @end
 

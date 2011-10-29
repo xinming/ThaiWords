@@ -7,8 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172321DC14594EF800A1C022 /* VoiceServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 172321DB14594EF800A1C022 /* VoiceServices */; };
+		172BC895145BD55D00FF3415 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 172BC894145BD55D00FF3415 /* Feeds.plist */; };
+		172BC898145BD57800FF3415 /* FeedsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC897145BD57800FF3415 /* FeedsController.m */; };
+		172BC8AC145BDA1000FF3415 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89A145BDA1000FF3415 /* DetailTableViewController.m */; };
+		172BC8AD145BDA1000FF3415 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */; };
+		172BC8AE145BDA1000FF3415 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89E145BDA1000FF3415 /* MWFeedInfo.m */; };
+		172BC8AF145BDA1000FF3415 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8A0145BDA1000FF3415 /* MWFeedItem.m */; };
+		172BC8B0145BDA1000FF3415 /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8A3145BDA1000FF3415 /* MWFeedParser.m */; };
+		172BC8B2145BDA1000FF3415 /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8A7145BDA1000FF3415 /* NSDate+InternetDateTime.m */; };
+		172BC8B3145BDA1000FF3415 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8A9145BDA1000FF3415 /* NSString+HTML.m */; };
+		172BC8B4145BDA1000FF3415 /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8AB145BDA1000FF3415 /* NSString+XMLEntities.m */; };
+		172BC8B9145BDAE900FF3415 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8B8145BDAE900FF3415 /* FeedViewController.m */; };
+		172BC8BD145BDFDD00FF3415 /* vocabs.png in Resources */ = {isa = PBXBuildFile; fileRef = 172BC8BC145BDFDD00FF3415 /* vocabs.png */; };
+		172BC8BF145BDFF100FF3415 /* review.png in Resources */ = {isa = PBXBuildFile; fileRef = 172BC8BE145BDFF100FF3415 /* review.png */; };
+		172BC8C1145BE04200FF3415 /* feeds.png in Resources */ = {isa = PBXBuildFile; fileRef = 172BC8C0145BE04200FF3415 /* feeds.png */; };
 		17523941145882CF00484D7C /* thaiwords.png in Resources */ = {isa = PBXBuildFile; fileRef = 17523940145882CF00484D7C /* thaiwords.png */; };
-		17706233145915BF004C20EB /* MTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17706232145915BF004C20EB /* MTLabel.m */; };
 		1770623A1459185F004C20EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177062391459185F004C20EB /* CoreText.framework */; };
 		17827187145861B900F47964 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827186145861B900F47964 /* UIKit.framework */; };
 		17827189145861B900F47964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827188145861B900F47964 /* Foundation.framework */; };
@@ -31,7 +45,6 @@
 		178271EB145863E300F47964 /* dtacRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 178271E9145863E300F47964 /* dtacRegular.ttf */; };
 		178271ED145863F300F47964 /* concrete_wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 178271EC145863F300F47964 /* concrete_wall.png */; };
 		178272051458658F00F47964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178272041458658F00F47964 /* QuartzCore.framework */; };
-		178272081458790B00F47964 /* flash_card_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 178272071458790B00F47964 /* flash_card_background.png */; };
 		1782722F1458793200F47964 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1782721E1458793200F47964 /* SVProgressHUD.bundle */; };
 		178272301458793200F47964 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 178272201458793200F47964 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
@@ -124,9 +137,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		172321D914594DDE00A1C022 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		172321DB14594EF800A1C022 /* VoiceServices */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = VoiceServices; path = "Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices"; sourceTree = DEVELOPER_DIR; };
+		172BC894145BD55D00FF3415 /* Feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
+		172BC896145BD57800FF3415 /* FeedsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedsController.h; path = ../FeedsController.h; sourceTree = "<group>"; };
+		172BC897145BD57800FF3415 /* FeedsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedsController.m; path = ../FeedsController.m; sourceTree = "<group>"; };
+		172BC899145BDA1000FF3415 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		172BC89A145BDA1000FF3415 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		172BC89D145BDA1000FF3415 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
+		172BC89E145BDA1000FF3415 /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedInfo.m; sourceTree = "<group>"; };
+		172BC89F145BDA1000FF3415 /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedItem.h; sourceTree = "<group>"; };
+		172BC8A0145BDA1000FF3415 /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedItem.m; sourceTree = "<group>"; };
+		172BC8A1145BDA1000FF3415 /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser_Private.h; sourceTree = "<group>"; };
+		172BC8A2145BDA1000FF3415 /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedParser.h; sourceTree = "<group>"; };
+		172BC8A3145BDA1000FF3415 /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWFeedParser.m; sourceTree = "<group>"; };
+		172BC8A6145BDA1000FF3415 /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		172BC8A7145BDA1000FF3415 /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		172BC8A8145BDA1000FF3415 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HTML.h"; sourceTree = "<group>"; };
+		172BC8A9145BDA1000FF3415 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HTML.m"; sourceTree = "<group>"; };
+		172BC8AA145BDA1000FF3415 /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		172BC8AB145BDA1000FF3415 /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XMLEntities.m"; sourceTree = "<group>"; };
+		172BC8B7145BDAE900FF3415 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedViewController.h; path = ../FeedViewController.h; sourceTree = "<group>"; };
+		172BC8B8145BDAE900FF3415 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedViewController.m; path = ../FeedViewController.m; sourceTree = "<group>"; };
+		172BC8BC145BDFDD00FF3415 /* vocabs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vocabs.png; sourceTree = "<group>"; };
+		172BC8BE145BDFF100FF3415 /* review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = review.png; sourceTree = "<group>"; };
+		172BC8C0145BE04200FF3415 /* feeds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feeds.png; sourceTree = "<group>"; };
 		17523940145882CF00484D7C /* thaiwords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thaiwords.png; sourceTree = "<group>"; };
-		17706231145915BF004C20EB /* MTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLabel.h; sourceTree = "<group>"; };
-		17706232145915BF004C20EB /* MTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLabel.m; sourceTree = "<group>"; };
 		177062391459185F004C20EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		17827182145861B900F47964 /* ThaiWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17827186145861B900F47964 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -142,19 +180,18 @@
 		178271CE145862D500F47964 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		178271D0145862DF00F47964 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		178271D2145862E800F47964 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		178271D4145863A000F47964 /* FlashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashViewController.h; sourceTree = "<group>"; };
-		178271D5145863A000F47964 /* FlashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashViewController.m; sourceTree = "<group>"; };
-		178271D6145863A000F47964 /* ThaiWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThaiWord.h; sourceTree = "<group>"; };
-		178271D7145863A000F47964 /* ThaiWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThaiWord.m; sourceTree = "<group>"; };
-		178271DA145863AE00F47964 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		178271DB145863AE00F47964 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		178271DD145863B300F47964 /* VocabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VocabView.h; sourceTree = "<group>"; };
-		178271DE145863B300F47964 /* VocabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VocabView.m; sourceTree = "<group>"; };
+		178271D4145863A000F47964 /* FlashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashViewController.h; path = ../FlashViewController.h; sourceTree = "<group>"; };
+		178271D5145863A000F47964 /* FlashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashViewController.m; path = ../FlashViewController.m; sourceTree = "<group>"; };
+		178271D6145863A000F47964 /* ThaiWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThaiWord.h; path = ../ThaiWord.h; sourceTree = "<group>"; };
+		178271D7145863A000F47964 /* ThaiWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThaiWord.m; path = ../ThaiWord.m; sourceTree = "<group>"; };
+		178271DA145863AE00F47964 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../RootViewController.h; sourceTree = "<group>"; };
+		178271DB145863AE00F47964 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../RootViewController.m; sourceTree = "<group>"; };
+		178271DD145863B300F47964 /* VocabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VocabView.h; path = ../VocabView.h; sourceTree = "<group>"; };
+		178271DE145863B300F47964 /* VocabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VocabView.m; path = ../VocabView.m; sourceTree = "<group>"; };
 		178271E8145863E300F47964 /* dtacBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dtacBold.ttf; sourceTree = "<group>"; };
 		178271E9145863E300F47964 /* dtacRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dtacRegular.ttf; sourceTree = "<group>"; };
 		178271EC145863F300F47964 /* concrete_wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concrete_wall.png; sourceTree = "<group>"; };
 		178272041458658F00F47964 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		178272071458790B00F47964 /* flash_card_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash_card_background.png; sourceTree = "<group>"; };
 		1782721E1458793200F47964 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1782721F1458793200F47964 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		178272201458793200F47964 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -165,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172321DC14594EF800A1C022 /* VoiceServices in Frameworks */,
 				1770623A1459185F004C20EB /* CoreText.framework in Frameworks */,
 				178272051458658F00F47964 /* QuartzCore.framework in Frameworks */,
 				178271D3145862E800F47964 /* SystemConfiguration.framework in Frameworks */,
@@ -183,33 +221,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17706230145915B2004C20EB /* MTLabel */ = {
+		172BC8B5145BDA2600FF3415 /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
-				17706231145915BF004C20EB /* MTLabel.h */,
-				17706232145915BF004C20EB /* MTLabel.m */,
+				172BC89D145BDA1000FF3415 /* MWFeedInfo.h */,
+				172BC89E145BDA1000FF3415 /* MWFeedInfo.m */,
+				172BC89F145BDA1000FF3415 /* MWFeedItem.h */,
+				172BC8A0145BDA1000FF3415 /* MWFeedItem.m */,
+				172BC8A1145BDA1000FF3415 /* MWFeedParser_Private.h */,
+				172BC8A2145BDA1000FF3415 /* MWFeedParser.h */,
+				172BC8A3145BDA1000FF3415 /* MWFeedParser.m */,
 			);
-			name = MTLabel;
+			name = MWFeedParser;
+			sourceTree = "<group>";
+		};
+		172BC8B6145BDA3800FF3415 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				172BC8A6145BDA1000FF3415 /* NSDate+InternetDateTime.h */,
+				172BC8A7145BDA1000FF3415 /* NSDate+InternetDateTime.m */,
+				172BC8A8145BDA1000FF3415 /* NSString+HTML.h */,
+				172BC8A9145BDA1000FF3415 /* NSString+HTML.m */,
+				172BC8AA145BDA1000FF3415 /* NSString+XMLEntities.h */,
+				172BC8AB145BDA1000FF3415 /* NSString+XMLEntities.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		17827177145861B900F47964 = {
 			isa = PBXGroup;
 			children = (
-				177062391459185F004C20EB /* CoreText.framework */,
-				17706230145915B2004C20EB /* MTLabel */,
-				17827206145865DF00F47964 /* Assets */,
 				1782719D1458622100F47964 /* RestKit.xcodeproj */,
 				1782718C145861B900F47964 /* ThaiWords */,
 				17827185145861B900F47964 /* Frameworks */,
 				17827183145861B900F47964 /* Products */,
-				178271D4145863A000F47964 /* FlashViewController.h */,
-				178271D5145863A000F47964 /* FlashViewController.m */,
-				178271D6145863A000F47964 /* ThaiWord.h */,
-				178271D7145863A000F47964 /* ThaiWord.m */,
-				178271DA145863AE00F47964 /* RootViewController.h */,
-				178271DB145863AE00F47964 /* RootViewController.m */,
-				178271DD145863B300F47964 /* VocabView.h */,
-				178271DE145863B300F47964 /* VocabView.m */,
+				17827206145865DF00F47964 /* Assets */,
 				178272091458793200F47964 /* SVProgressHUD */,
 			);
 			sourceTree = "<group>";
@@ -225,6 +271,9 @@
 		17827185145861B900F47964 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				172321DB14594EF800A1C022 /* VoiceServices */,
+				172321D914594DDE00A1C022 /* AVFoundation.framework */,
+				177062391459185F004C20EB /* CoreText.framework */,
 				178272041458658F00F47964 /* QuartzCore.framework */,
 				178271D2145862E800F47964 /* SystemConfiguration.framework */,
 				178271D0145862DF00F47964 /* MobileCoreServices.framework */,
@@ -239,6 +288,24 @@
 		1782718C145861B900F47964 /* ThaiWords */ = {
 			isa = PBXGroup;
 			children = (
+				172BC899145BDA1000FF3415 /* DetailTableViewController.h */,
+				172BC89A145BDA1000FF3415 /* DetailTableViewController.m */,
+				172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */,
+				172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */,
+				172BC8B5145BDA2600FF3415 /* MWFeedParser */,
+				172BC8B6145BDA3800FF3415 /* Categories */,
+				172BC896145BD57800FF3415 /* FeedsController.h */,
+				172BC897145BD57800FF3415 /* FeedsController.m */,
+				172BC8B7145BDAE900FF3415 /* FeedViewController.h */,
+				172BC8B8145BDAE900FF3415 /* FeedViewController.m */,
+				178271D4145863A000F47964 /* FlashViewController.h */,
+				178271D5145863A000F47964 /* FlashViewController.m */,
+				178271D6145863A000F47964 /* ThaiWord.h */,
+				178271D7145863A000F47964 /* ThaiWord.m */,
+				178271DA145863AE00F47964 /* RootViewController.h */,
+				178271DB145863AE00F47964 /* RootViewController.m */,
+				178271DD145863B300F47964 /* VocabView.h */,
+				178271DE145863B300F47964 /* VocabView.m */,
 				17827195145861B900F47964 /* AppDelegate.h */,
 				17827196145861B900F47964 /* AppDelegate.m */,
 				1782718D145861B900F47964 /* Supporting Files */,
@@ -278,9 +345,12 @@
 		17827206145865DF00F47964 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				172BC894145BD55D00FF3415 /* Feeds.plist */,
 				17523940145882CF00484D7C /* thaiwords.png */,
-				178272071458790B00F47964 /* flash_card_background.png */,
+				172BC8BE145BDFF100FF3415 /* review.png */,
+				172BC8C0145BE04200FF3415 /* feeds.png */,
 				178271EC145863F300F47964 /* concrete_wall.png */,
+				172BC8BC145BDFDD00FF3415 /* vocabs.png */,
 				178271E8145863E300F47964 /* dtacBold.ttf */,
 				178271E9145863E300F47964 /* dtacRegular.ttf */,
 			);
@@ -446,9 +516,12 @@
 				178271EA145863E300F47964 /* dtacBold.ttf in Resources */,
 				178271EB145863E300F47964 /* dtacRegular.ttf in Resources */,
 				178271ED145863F300F47964 /* concrete_wall.png in Resources */,
-				178272081458790B00F47964 /* flash_card_background.png in Resources */,
 				1782722F1458793200F47964 /* SVProgressHUD.bundle in Resources */,
 				17523941145882CF00484D7C /* thaiwords.png in Resources */,
+				172BC895145BD55D00FF3415 /* Feeds.plist in Resources */,
+				172BC8BD145BDFDD00FF3415 /* vocabs.png in Resources */,
+				172BC8BF145BDFF100FF3415 /* review.png in Resources */,
+				172BC8C1145BE04200FF3415 /* feeds.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +539,16 @@
 				178271DC145863AE00F47964 /* RootViewController.m in Sources */,
 				178271DF145863B300F47964 /* VocabView.m in Sources */,
 				178272301458793200F47964 /* SVProgressHUD.m in Sources */,
-				17706233145915BF004C20EB /* MTLabel.m in Sources */,
+				172BC898145BD57800FF3415 /* FeedsController.m in Sources */,
+				172BC8AC145BDA1000FF3415 /* DetailTableViewController.m in Sources */,
+				172BC8AD145BDA1000FF3415 /* GTMNSString+HTML.m in Sources */,
+				172BC8AE145BDA1000FF3415 /* MWFeedInfo.m in Sources */,
+				172BC8AF145BDA1000FF3415 /* MWFeedItem.m in Sources */,
+				172BC8B0145BDA1000FF3415 /* MWFeedParser.m in Sources */,
+				172BC8B2145BDA1000FF3415 /* NSDate+InternetDateTime.m in Sources */,
+				172BC8B3145BDA1000FF3415 /* NSString+HTML.m in Sources */,
+				172BC8B4145BDA1000FF3415 /* NSString+XMLEntities.m in Sources */,
+				172BC8B9145BDAE900FF3415 /* FeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +635,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -567,6 +653,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

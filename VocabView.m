@@ -25,28 +25,28 @@
         [self addSubview:title];
         
         CGFloat contentY = 95.0;
-        UILabel *meaningLabel = [VocabView generateLabel:@"definition" withFrame:CGRectMake(20, contentY, 280, 20)];
+        UILabel *meaningLabel = [VocabView generateLabel:@"Definition" withFrame:CGRectMake(20, contentY, 280, 20)];
         [self addSubview:meaningLabel];
         
-        contentY += 20.0;
+        contentY += 24.0;
         
-        meaning = [[MTLabel alloc] initWithFrame:CGRectMake(20, contentY, 280, 25)];
+        meaning = [[UILabel alloc] initWithFrame:CGRectMake(20, contentY, 280, 25)];
         [meaning setBackgroundColor:[UIColor clearColor]];
-        [meaning setFontColor:[UIColor colorWithWhite:0 alpha:0.8]];
+        [meaning setTextColor:[UIColor colorWithWhite:0 alpha:0.8]];
         [meaning setNumberOfLines:0];
-        [meaning setFont:[UIFont fontWithName:@"dtac-Bold" size:18]];
+        [meaning setFont:[UIFont fontWithName:@"dtac" size:18]];
         [meaning setText:[word.meaning componentsJoinedByString:@", "]];
-        [meaning setResizeToFitText:YES];
+        [meaning sizeToFit];
         [self addSubview:meaning];
         
-        contentY += meaning.frame.size.height + 20.0;
+        contentY += meaning.frame.size.height + 25.0;
         
         if([[word.examples allKeys] count] > 0){
-        UILabel *examplesLabel = [VocabView generateLabel:@"examples" withFrame:CGRectMake(20, contentY, 280, 20)];
+        UILabel *examplesLabel = [VocabView generateLabel:@"Examples" withFrame:CGRectMake(20, contentY, 280, 20)];
         [self addSubview:examplesLabel];
 
-        contentY += 20.0;
-        examples = [[MTLabel alloc] initWithFrame:CGRectMake(20, contentY, 280, 45)];
+        contentY += 24.0;
+        examples = [[UILabel alloc] initWithFrame:CGRectMake(20, contentY, 280, 45)];
         [examples setNumberOfLines:0];
         [examples setBackgroundColor:[UIColor clearColor]];
         
@@ -61,10 +61,10 @@
              [(NSArray *)[word.examples objectForKey:[keys objectAtIndex:i]] componentsJoinedByString:@", "]];
         }
         [examples setText:examplesText];
-        [examples setFont:[UIFont fontWithName:@"dtac-Bold" size:18]];
+        [examples setFont:[UIFont fontWithName:@"dtac" size:18]];
         [examples setNumberOfLines:0];
-        [examples setResizeToFitText:YES];
-        [examples setFontColor:[UIColor colorWithWhite:0 alpha:0.8]];
+        [examples sizeToFit];
+        [examples setTextColor:[UIColor colorWithWhite:0 alpha:0.8]];
         
         [self addSubview:examples];
         }
@@ -89,20 +89,20 @@
     
     CGContextRef c = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(c, 1);
-    CGFloat gray[4] = {0.9f, 0.9f, 0.9f, 1.0f};
+    CGFloat gray[4] = {0.75f, 0.75f, 0.75f, 1.0f};
     CGContextSetStrokeColor(c, gray);
     CGContextBeginPath(c);
-    CGContextMoveToPoint(c, 0.0f, 79.5f);
-    CGContextAddLineToPoint(c, 320.0f, 79.5f);
+    CGContextMoveToPoint(c, 20.0f, 79.5f);
+    CGContextAddLineToPoint(c, 300.0f, 79.5f);
     CGContextStrokePath(c);
 }
 
 + (UILabel *)generateLabel:(NSString *)text withFrame:(CGRect)frame{
     UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
-    label.text = text;
-    [label setFont:[UIFont fontWithName:@"dtac-Bold" size:18]];
-    [label setTextColor:[UIColor colorWithWhite:0.5 alpha:1]];
-    [label setBackgroundColor:[UIColor clearColor]];
+    label.text = [text uppercaseString];
+    [label setFont:[UIFont fontWithName:@"dtac-Bold" size:16]];
+    [label setTextColor:[UIColor colorWithWhite:0.65 alpha:1]];
+    [label setBackgroundColor:[UIColor whiteColor]];
     return label;
 }
 - (void)dealloc{

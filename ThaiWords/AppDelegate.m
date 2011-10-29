@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
+#import <RestKit/RestKit.h>
+#import "ThaiWord.h"
+#import "FeedsController.h"
 
 @implementation AppDelegate
 
@@ -23,13 +27,51 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    [self initializeDataMappping];
+
     
-    RootViewController *rootViewController  = [[RootViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-    navController.navigationBar.tintColor = [UIColor colorWithWhite:0.3 alpha:1];
-    [self.window addSubview:navController.view];
+    UITabBarController *tabController = [[UITabBarController alloc] init];
+    NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:3];
+    
+    [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
+                                       [[[RootViewController alloc] initWithName:@"Vocabs" completed:NO] autorelease]
+                                       ] autorelease]];
+    
+    [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
+                                       [[[RootViewController alloc] initWithName:@"Review" completed:YES] autorelease]
+                                       ] autorelease]];
+
+    [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController:
+                                       [[[FeedsController alloc] initWithStyle:UITableViewStylePlain] autorelease]] autorelease]];
+    
+    
+    for (UINavigationController *(navCon) in localControllersArray) {
+        navCon.navigationBar.tintColor = [UIColor colorWithWhite:0.3 alpha:1];
+        navCon.navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
+        navCon.navigationBar.layer.shadowColor = [[UIColor blackColor] CGColor];
+        navCon.navigationBar.layer.shadowOpacity = 0.75;
+        navCon.navigationBar.layer.shadowRadius = 2;
+        navCon.navigationBar.layer.shouldRasterize = YES;
+    }
+    
+    [tabController setViewControllers:localControllersArray];
+
+    
+    [self.window addSubview:tabController.view];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)initializeDataMappping
+{
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://ohho.in.th:5000"];
+    [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];
+    [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words" forMethod:RKRequestMethodPOST];
+    
+    RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[ThaiWord class]];
+    [mapping mapKeyPath:@"thai_word[is_done]" toAttribute:@"isDone"];
+    [mapping mapKeyPath:@"thai_word[word]" toAttribute:@"word"];
+    [manager.mappingProvider setSerializationMapping:[mapping inverseMapping] forClass:[ThaiWord class]];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -15,6 +15,7 @@
 @synthesize examples;
 @synthesize reverseExamples;
 @synthesize similarWords;
+@synthesize isDone;
 
 - (id)init
 {
@@ -34,6 +35,7 @@
     [thaiWordMapping mapKeyPath:@"similar_words" toAttribute:@"similarWords"];
     [thaiWordMapping mapKeyPath:@"examples" toAttribute:@"examples"];
     [thaiWordMapping mapKeyPath:@"meaning" toAttribute:@"meaning"];
+    [thaiWordMapping mapKeyPath:@"is_done" toAttribute:@"isDone"];
     return thaiWordMapping;
 }
 

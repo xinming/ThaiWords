@@ -9,6 +9,7 @@
 #import "FlashViewController.h"
 #import "VocabView.h"
 #import "ThaiWord.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation FlashViewController
 @synthesize word;
@@ -55,15 +56,36 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
-//    [super viewDidLoad];
+    [super viewDidLoad];
 }
 
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+- (void) viewWillAppear:(BOOL)animated{
+//    self.navigationController.toolbarHidden = NO;    
+//    [self.navigationController.toolbar setTintColor:[UIColor colorWithWhite:0.3 alpha:1]];
+//    self.navigationController.toolbar.layer.shadowOffset = CGSizeMake(0, -1);
+//    self.navigationController.toolbar.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.navigationController.toolbar.layer.shadowOpacity = 0.5;
+//    self.navigationController.toolbar.layer.shadowRadius = 1;
+//    self.navigationController.toolbar.layer.shouldRasterize = YES;
+    
+    UIBarButtonItem *speakButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(speakWord)];
+//    UIBarButtonItem	*flex = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
+//    flex.width = 10.0;
+    
+//    [self setToolbarItems:[NSArray arrayWithObjects:flex, speakButton, nil]];
+    [self.navigationItem setRightBarButtonItem:speakButton];
+}
+
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+}
+
+- (void)speakWord{
+    NSObject *v = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
+    [v startSpeakingString:self.word.word];
+//    [v release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
