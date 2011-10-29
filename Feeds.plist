@@ -4,6 +4,12 @@
 <dict>
 	<key>Feeds</key>
 	<dict>
+		<key>7boot</key>
+		<string>http://www.7boot.com/feed/</string>
+		<key>iannnnn</key>
+		<string>http://iannnnn.com/feed</string>
+		<key>iPhoneMod</key>
+		<string>http://www.iphonemod.net/feed</string>
 		<key>Family News</key>
 		<string>http://www.krobkruakao.com/rss/News.rss</string>
 		<key>ThaiRath</key>

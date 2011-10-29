@@ -47,6 +47,7 @@
 		178272051458658F00F47964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178272041458658F00F47964 /* QuartzCore.framework */; };
 		1782722F1458793200F47964 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1782721E1458793200F47964 /* SVProgressHUD.bundle */; };
 		178272301458793200F47964 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 178272201458793200F47964 /* SVProgressHUD.m */; };
+		17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -195,6 +196,8 @@
 		1782721E1458793200F47964 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1782721F1458793200F47964 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		178272201458793200F47964 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		17B3C382145C606F003EE78F /* NSString+CamelCaseConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CamelCaseConversion.h"; sourceTree = "<group>"; };
+		17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CamelCaseConversion.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +247,8 @@
 				172BC8A9145BDA1000FF3415 /* NSString+HTML.m */,
 				172BC8AA145BDA1000FF3415 /* NSString+XMLEntities.h */,
 				172BC8AB145BDA1000FF3415 /* NSString+XMLEntities.m */,
+				17B3C382145C606F003EE78F /* NSString+CamelCaseConversion.h */,
+				17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 				172BC8B3145BDA1000FF3415 /* NSString+HTML.m in Sources */,
 				172BC8B4145BDA1000FF3415 /* NSString+XMLEntities.m in Sources */,
 				172BC8B9145BDAE900FF3415 /* FeedViewController.m in Sources */,
+				17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,7 @@
 @property (nonatomic,retain) NSDictionary *examples;
 @property (nonatomic,retain) NSDictionary *reverseExamples;
 @property (nonatomic,retain) NSDictionary *similarWords;
+@property (nonatomic,retain) NSString *pronounciation;
 @property (nonatomic,assign) BOOL isDone;
 + (RKObjectMapping *) mapping;
 @end

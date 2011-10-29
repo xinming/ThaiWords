@@ -65,6 +65,7 @@
 - (void)initializeDataMappping
 {
     RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://ohho.in.th:5000"];
+//    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:3000"];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words" forMethod:RKRequestMethodPOST];
     

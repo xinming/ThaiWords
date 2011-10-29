@@ -16,6 +16,7 @@
 @synthesize reverseExamples;
 @synthesize similarWords;
 @synthesize isDone;
+@synthesize pronounciation;
 
 - (id)init
 {
@@ -36,6 +37,7 @@
     [thaiWordMapping mapKeyPath:@"examples" toAttribute:@"examples"];
     [thaiWordMapping mapKeyPath:@"meaning" toAttribute:@"meaning"];
     [thaiWordMapping mapKeyPath:@"is_done" toAttribute:@"isDone"];
+    [thaiWordMapping mapKeyPath:@"pronounciation" toAttribute:@"pronounciation"];
     return thaiWordMapping;
 }
 
@@ -46,6 +48,7 @@
     [examples release];
     [reverseExamples release];
     [similarWords release];
+    [pronounciation release];
     [super dealloc];
 }
 @end

@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "ThaiWord.h"
-//#import "MTLabel.h"
 
-@interface VocabView : UIView
+
+@interface VocabView : UIScrollView
+@property (nonatomic, retain) ThaiWord *word;
 @property (nonatomic, retain) UILabel* title;
-@property (nonatomic, retain) UILabel *meaning;
-@property (nonatomic, retain) UILabel *examples;
 + (UILabel *)generateLabel:(NSString *)text withFrame:(CGRect)frame;
-- (id)initWithFrame:(CGRect)frame word:(ThaiWord *)word;
+- (id)initWithFrame:(CGRect)frame word:(ThaiWord *)theWord;
+- (void) initSubviews;
++ (UILabel *)generateGroupedContent:(id)data withFrame:(CGRect)frame maxEntries:(int)maxCount;
 @end
