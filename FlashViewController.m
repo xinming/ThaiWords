@@ -10,6 +10,7 @@
 #import "VocabView.h"
 #import "ThaiWord.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AppDelegate.h"
 
 @implementation FlashViewController
 @synthesize word;
@@ -83,9 +84,7 @@
 }
 
 - (void)speakWord{
-    NSObject *v = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
-    [v startSpeakingString:self.word.word];
-//    [v release];
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] speakWord:self.word.word];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

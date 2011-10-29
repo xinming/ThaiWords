@@ -31,6 +31,7 @@
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
 #import "DetailTableViewController.h"
+#import "SVProgressHUD.h"
 
 @implementation FeedViewController
 
@@ -54,17 +55,19 @@
 	
 	// Setup
 	self.title = @"Loading...";
+    [[self tableView] setHidden:YES];
 	formatter = [[NSDateFormatter alloc] init];
 	[formatter setDateStyle:NSDateFormatterShortStyle];
 	[formatter setTimeStyle:NSDateFormatterShortStyle];
 	parsedItems = [[NSMutableArray alloc] init];
 	self.itemsToDisplay = [NSArray array];
-	
 	// Refresh button
 	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh 
 																							target:self 
 																							action:@selector(refresh)] autorelease];
-	// Parse
+	
+    [SVProgressHUD showWithStatus:@"Loading"];
+    // Parse
 	
 	feedParser.delegate = self;
 	feedParser.feedParseType = ParseTypeFull; // Parse feed info and all items
@@ -78,7 +81,7 @@
 
 // Reset and reparse
 - (void)refresh {
-	self.title = @"Refreshing...";
+    [SVProgressHUD showWithStatus:@"Loading"];
 	[parsedItems removeAllObjects];
 	[feedParser stopParsing];
 	[feedParser parse];
@@ -95,7 +98,9 @@
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedInfo:(MWFeedInfo *)info {
 	NSLog(@"Parsed Feed Info: “%@”", info.title);
+    [SVProgressHUD dismiss];
 	self.title = info.title;
+    [[self tableView] setHidden:NO];
 }
 
 - (void)feedParser:(MWFeedParser *)parser didParseFeedItem:(MWFeedItem *)item {
@@ -110,6 +115,7 @@
 																				 ascending:NO] autorelease]]];
 	self.tableView.userInteractionEnabled = YES;
 	self.tableView.alpha = 1;
+    [SVProgressHUD dismiss];
 	[self.tableView reloadData];
 }
 
@@ -157,7 +163,7 @@
 		
 		// Set
 		cell.textLabel.font = [UIFont boldSystemFontOfSize:23];
-        cell.textLabel.textColor = [UIColor colorWithWhite:0.2 alpha:1];
+        cell.textLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
         cell.textLabel.text = [self shortenStringForTableCell:itemTitle withLength:40];
 		cell.detailTextLabel.text = [self shortenStringForTableCell:itemSummary withLength:54];
         cell.detailTextLabel.numberOfLines = 1;

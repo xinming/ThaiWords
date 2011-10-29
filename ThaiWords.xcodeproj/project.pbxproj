@@ -48,6 +48,7 @@
 		1782722F1458793200F47964 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1782721E1458793200F47964 /* SVProgressHUD.bundle */; };
 		178272301458793200F47964 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 178272201458793200F47964 /* SVProgressHUD.m */; };
 		17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */; };
+		17B3C389145C72E3003EE78F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17B3C388145C72E3003EE78F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,8 @@
 		178272201458793200F47964 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		17B3C382145C606F003EE78F /* NSString+CamelCaseConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CamelCaseConversion.h"; sourceTree = "<group>"; };
 		17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CamelCaseConversion.m"; sourceTree = "<group>"; };
+		17B3C385145C6DE1003EE78F /* VSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSpeechSynthesizer.h; path = ../VSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		17B3C388145C72E3003EE78F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,7 @@
 		17827177145861B900F47964 = {
 			isa = PBXGroup;
 			children = (
+				17B3C388145C72E3003EE78F /* Settings.bundle */,
 				1782719D1458622100F47964 /* RestKit.xcodeproj */,
 				1782718C145861B900F47964 /* ThaiWords */,
 				17827185145861B900F47964 /* Frameworks */,
@@ -313,6 +317,7 @@
 				178271DE145863B300F47964 /* VocabView.m */,
 				17827195145861B900F47964 /* AppDelegate.h */,
 				17827196145861B900F47964 /* AppDelegate.m */,
+				17B3C385145C6DE1003EE78F /* VSSpeechSynthesizer.h */,
 				1782718D145861B900F47964 /* Supporting Files */,
 			);
 			path = ThaiWords;
@@ -527,6 +532,7 @@
 				172BC8BD145BDFDD00FF3415 /* vocabs.png in Resources */,
 				172BC8BF145BDFF100FF3415 /* review.png in Resources */,
 				172BC8C1145BE04200FF3415 /* feeds.png in Resources */,
+				17B3C389145C72E3003EE78F /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

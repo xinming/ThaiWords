@@ -44,8 +44,8 @@
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Review" image:[UIImage imageNamed:@"review.png"] tag:1];
     }else{
         self.isCompleted = NO;
-        self.title = @"Vocabs";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Vocabs" image:[UIImage imageNamed:@"vocabs.png"] tag:2];
+        self.title = @"Vocabulary";
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Vocabulary" image:[UIImage imageNamed:@"vocabs.png"] tag:2];
 
     }
     
@@ -57,20 +57,18 @@
     [super viewDidLoad];
     self.page = 1;
     self.thaiWords = [NSMutableArray arrayWithObjects: nil];
-    
+    [[self tableView] setHidden:YES];
     [self index:[NSNumber numberWithInt:page]];
-//    UIBarButtonItem *refreshButton = [[[UIBarButtonItem alloc] initWithTitle:@"Refresh" 
-//                                                                      style:UIBarButtonItemStylePlain target:self action:@selector(refresh)] autorelease];
     
     UIBarButtonItem *refreshButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)] autorelease];
 
     
-    self.navigationItem.leftBarButtonItem = refreshButton;
+    self.navigationItem.rightBarButtonItem = refreshButton;
     
     
     if(!self.isCompleted){
         UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWord)] autorelease];
-        self.navigationItem.rightBarButtonItem = addButton;
+        self.navigationItem.leftBarButtonItem = addButton;
     }
     
 }
@@ -93,8 +91,8 @@
 - (void) refresh
 {
     self.page = 1;
-    [self.thaiWords removeAllObjects];
     [self index:[NSNumber numberWithInt:1]];
+    self.tableView.userInteractionEnabled = NO;
 }
 
 - (void) addWord
@@ -131,7 +129,8 @@
 - (void)index:(NSNumber*)load_page
 {
     [SVProgressHUD showWithStatus:@"Loading"];
-
+    self.tableView.userInteractionEnabled = NO;
+	self.tableView.alpha = 0.3;
     
     
     NSDictionary *params;
@@ -154,9 +153,15 @@
 
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    [[self tableView] setHidden:NO];
+    if(page == 1){
+        [self.thaiWords removeAllObjects];
+    }
     [self.thaiWords addObjectsFromArray:objects];
     [self.tableView reloadData];
     [SVProgressHUD dismiss];
+    self.tableView.userInteractionEnabled = YES;
+	self.tableView.alpha = 1;
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObject:(id)object{
@@ -183,9 +188,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)refreshDisplay:(UITableView *)tableView {
-    [tableView reloadData]; 
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

@@ -30,7 +30,7 @@
 #import "DetailTableViewController.h"
 #import "NSString+HTML.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import "AppDelegate.h"
 typedef enum { SectionHeader, SectionDetail } Sections;
 typedef enum { SectionHeaderTitle, SectionHeaderDate, SectionHeaderURL } HeaderRows;
 typedef enum { SectionDetailSummary } DetailRows;
@@ -62,13 +62,10 @@ typedef enum { SectionDetailSummary } DetailRows;
     [self.navigationItem setRightBarButtonItem:speakButton];
     [speakButton release];
 
-    
-    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"Add Word" action:@selector(addWord)];
-    UIMenuItem *menuItem2 = [[UIMenuItem alloc] initWithTitle:@"Speak" action:@selector(speakWord)];
-    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:menuItem, menuItem2, nil]];
-    [menuItem release]; 
-    [menuItem2 release];
-
+    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:
+                                                           [[[UIMenuItem alloc] initWithTitle:@"Add Word" action:@selector(addWord)] autorelease], 
+                                                           [[[UIMenuItem alloc] initWithTitle:@"Speak" action:@selector(speakWord)] autorelease], 
+                                                           nil]];
 	// Date
 	if (item.date) {
 		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -86,7 +83,6 @@ typedef enum { SectionDetailSummary } DetailRows;
 	}
     
     
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Icon.png"]];
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"project_papper.png"]];
     self.tableView.separatorColor = [UIColor colorWithWhite:0.2 alpha:0.15];
 	
@@ -134,9 +130,10 @@ typedef enum { SectionDetailSummary } DetailRows;
 				// Header
 				switch (indexPath.row) {
 					case SectionHeaderTitle:
-						cell.textLabel.font = [UIFont boldSystemFontOfSize:18];
-                        cell.textLabel.numberOfLines = 2;
+						cell.textLabel.font = [UIFont boldSystemFontOfSize:20];
+                        cell.textLabel.numberOfLines = 1;
 						cell.textLabel.text = itemTitle;
+                        cell.textLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
 						break;
 					case SectionHeaderDate:
 						cell.textLabel.text = dateString ? dateString : @"[No Date]";
@@ -156,9 +153,9 @@ typedef enum { SectionDetailSummary } DetailRows;
 			}
 			case SectionDetail: {
                 textV=[[UITextView alloc] initWithFrame:CGRectMake(0, 0, 320, 480 - 20 - 54 - 34 - 34 - 44)];
-                textV.font = [UIFont systemFontOfSize:18.0];
+                textV.font = [UIFont systemFontOfSize:20.0];
                 textV.text=summaryString;
-                textV.textColor=[UIColor blackColor];
+                textV.textColor = [UIColor colorWithWhite:0.25 alpha:1];
                 textV.editable=NO;
                 [cell.contentView addSubview:textV];
 				break;
@@ -184,7 +181,6 @@ typedef enum { SectionDetailSummary } DetailRows;
 }
 
 - (void)speakWord{
-    NSObject *v = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
     NSString *text;
     if (self.textV.selectedRange.length > 0) {
         text = [self.textV.text substringWithRange:[self.textV selectedRange]]; 
@@ -192,8 +188,7 @@ typedef enum { SectionDetailSummary } DetailRows;
     else{
         text = self.textV.text;
     }
-    
-    [v startSpeakingString:text];
+    [(AppDelegate *)[[UIApplication sharedApplication] delegate] speakWord:text];
 }
 
 

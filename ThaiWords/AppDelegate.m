@@ -15,6 +15,7 @@
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize speaker;
 
 - (void)dealloc
 {
@@ -28,13 +29,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self initializeDataMappping];
-
-    
+    self.speaker = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
+    [speaker setRate:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speech_rate"] doubleValue]];
     UITabBarController *tabController = [[UITabBarController alloc] init];
     NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:3];
     
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
-                                       [[[RootViewController alloc] initWithName:@"Vocabs" completed:NO] autorelease]
+                                       [[[RootViewController alloc] initWithName:@"Vocabulary" completed:NO] autorelease]
                                        ] autorelease]];
     
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
@@ -100,9 +101,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
+    [speaker setRate:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speech_rate"] doubleValue]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -112,6 +111,11 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+
+
+- (void)speakWord:(NSString *) text{
+    [speaker startSpeakingString:text toURL:nil withLanguageCode:@"th-TH"];
 }
 
 @end

@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
 #import "RootViewController.h"
+#import "VSSpeechSynthesizer.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) VSSpeechSynthesizer *speaker;
+- (void)speakWord:(NSString *) text;
 - (void)initializeDataMappping;
 @end
