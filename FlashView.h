@@ -1,5 +1,5 @@
 //
-//  VocabView.h
+//  FlashView.h
 //  IOSBoilerplate
 //
 //  Created by Xinming Zhao on 10/10/11.
@@ -10,7 +10,7 @@
 #import "ThaiWord.h"
 
 
-@interface VocabView : UIScrollView
+@interface FlashView : UIScrollView
 @property (nonatomic, retain) ThaiWord *word;
 @property (nonatomic, retain) UILabel* title;
 + (UILabel *)generateLabel:(NSString *)text withFrame:(CGRect)frame;

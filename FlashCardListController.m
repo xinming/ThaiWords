@@ -26,12 +26,12 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //  
 
-#import "RootViewController.h"
+#import "FlashCardListController.h"
 #import "ThaiWord.h"
 #import "FlashViewController.h"
 #import "SVProgressHUD.h"
-
-@implementation RootViewController
+#import "TDBadgedCell.h"
+@implementation FlashCardListController
 
 @synthesize thaiWords, page, isCompleted, alertBox;
 
@@ -118,6 +118,9 @@
 - (void) alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == 1){
         NSString *input = [[(UITextView *)[[alertBox subviews] lastObject] text] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        if([input length] == 0){
+            return;
+        }
         ThaiWord *word = [[ThaiWord alloc] init];
         word.word = input;
         [[RKObjectManager sharedManager] postObject:word delegate:self];
@@ -129,6 +132,7 @@
 - (void)index:(NSNumber*)load_page
 {
     [SVProgressHUD showWithStatus:@"Loading"];
+//    [SVProgressHUD showInView:self.view status:@"Loading" networkIndicator:YES];
     self.tableView.userInteractionEnabled = NO;
 	self.tableView.alpha = 0.3;
     
@@ -153,6 +157,10 @@
 
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    if ([objects count] == 0) {
+        return;
+    }
+    NSLog(@"did load objects : %@", objects);
     [[self tableView] setHidden:NO];
     if(page == 1){
         [self.thaiWords removeAllObjects];
@@ -169,10 +177,39 @@
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error{
-    NSLog(@"%@", error);
+//    [[[UIAlertView alloc] initWithTitle:@"Error Occurred" 
+//                               message:[NSString stringWithFormat:@"%@", error]
+//                              delegate:self 
+//                     cancelButtonTitle:@"OK"
+//                      otherButtonTitles:nil] show];
+    NSLog(@"did fail with error %@", error);
+    if([error code] == 1001){
+        [self refresh];
+    }
+    [SVProgressHUD dismiss];
 }
 
-
+- (void)objectLoaderDidFinishLoading:(RKObjectLoader *)objectLoader{
+    NSLog(@"%@", [objectLoader URLRequest]);
+    switch ([objectLoader method]) {
+        case  RKRequestMethodGET:
+            NSLog(@"get");
+            break;
+        case RKRequestMethodPOST:
+            NSLog(@"post");
+            [self refresh];
+            break;
+        case RKRequestMethodPUT:
+            NSLog(@"put");
+            break;
+        case RKRequestMethodDELETE:
+            NSLog(@"delete");
+            break;
+        default:
+            break;
+    }
+    
+}
 
 - (void)viewWillDisappear:(BOOL)animated
 {
@@ -220,9 +257,9 @@
     }
     else{
         static NSString *CellIdentifier = @"Word";        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        TDBadgedCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+            cell = [[[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
         }
         ThaiWord* thaiWord = [self.thaiWords objectAtIndex:[indexPath row]];
         
@@ -230,6 +267,17 @@
         cell.textLabel.textColor = [UIColor colorWithWhite:0.25 alpha:1];
         cell.detailTextLabel.text = [thaiWord.meaning componentsJoinedByString:@", "];
         cell.textLabel.font = [UIFont boldSystemFontOfSize:26];
+        cell.badgeString = [NSString stringWithFormat:@"%dK", ([thaiWord.frequency intValue]/1000)];
+
+        
+        if([thaiWord.frequency intValue] > 500000){
+            cell.badgeColor = [UIColor orangeColor];
+        }else if([thaiWord.frequency intValue] > 50000){
+            cell.badgeColor = [UIColor colorWithRed:0.530 green:0.600 blue:0.738 alpha:1.000];
+        }
+        else{
+            cell.badgeColor =[UIColor colorWithRed:0.730 green:0.730 blue:0.738 alpha:1.000];
+        }
         return cell;
     }
 

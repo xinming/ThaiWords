@@ -30,7 +30,7 @@
 #import <RestKit/RestKit.h>
 #import "SVProgressHUD.h"
 
-@interface RootViewController : UITableViewController <RKObjectLoaderDelegate, UIAlertViewDelegate> {
+@interface FlashCardListController : UITableViewController <RKObjectLoaderDelegate, UIAlertViewDelegate> {
 }
 
 @property (nonatomic, retain) NSMutableArray* thaiWords;

@@ -4,6 +4,8 @@
 <dict>
 	<key>Feeds</key>
 	<dict>
+		<key>onopen</key>
+		<string>http://www.onopen.com/rss.xml</string>
 		<key>7boot</key>
 		<string>http://www.7boot.com/feed/</string>
 		<key>iannnnn</key>

@@ -1,5 +1,5 @@
 //
-//  DetailTableViewController.h
+//  DetailFeedViewController.h
 //  MWFeedParser
 //
 //  Copyright (c) 2010 Michael Waterfall
@@ -30,7 +30,7 @@
 #import <UIKit/UIKit.h>
 #import "MWFeedItem.h"
 #import "ThaiWord.h"
-@interface DetailTableViewController : UITableViewController <RKObjectLoaderDelegate> {
+@interface DetailFeedViewController : UITableViewController {
 	MWFeedItem *item;
 	NSString *dateString, *summaryString;
 }

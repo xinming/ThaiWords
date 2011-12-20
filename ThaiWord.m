@@ -17,7 +17,7 @@
 @synthesize similarWords;
 @synthesize isDone;
 @synthesize pronounciation;
-
+@synthesize frequency;
 - (id)init
 {
     self = [super init];
@@ -37,6 +37,7 @@
     [thaiWordMapping mapKeyPath:@"examples" toAttribute:@"examples"];
     [thaiWordMapping mapKeyPath:@"meaning" toAttribute:@"meaning"];
     [thaiWordMapping mapKeyPath:@"is_done" toAttribute:@"isDone"];
+    [thaiWordMapping mapKeyPath:@"frequency" toAttribute:@"frequency"];
     [thaiWordMapping mapKeyPath:@"pronounciation" toAttribute:@"pronounciation"];
     return thaiWordMapping;
 }
@@ -48,6 +49,7 @@
     [examples release];
     [reverseExamples release];
     [similarWords release];
+    [frequency release];
     [pronounciation release];
     [super dealloc];
 }

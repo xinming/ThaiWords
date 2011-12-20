@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ThaiWord.h"
-@interface FlashViewController : UIViewController
+@interface FlashViewController : UIViewController <UIAlertViewDelegate>
 @property (nonatomic, retain) ThaiWord *word; 
 
 - (id)initWithWord:(ThaiWord *)thaiWord;
-
+- (void)deleteWord;
+- (void)promptDeleteWord;
+- (void)speakWord;
 @end

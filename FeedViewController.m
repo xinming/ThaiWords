@@ -30,7 +30,7 @@
 #import "FeedViewController.h"
 #import "NSString+HTML.h"
 #import "MWFeedParser.h"
-#import "DetailTableViewController.h"
+#import "DetailFeedViewController.h"
 #import "SVProgressHUD.h"
 
 @implementation FeedViewController
@@ -184,7 +184,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
 	// Show detail
-	DetailTableViewController *detail = [[DetailTableViewController alloc] initWithStyle:UITableViewStylePlain];
+	DetailFeedViewController *detail = [[DetailFeedViewController alloc] initWithStyle:UITableViewStylePlain];
 	detail.item = (MWFeedItem *)[itemsToDisplay objectAtIndex:indexPath.row];
     detail.hidesBottomBarWhenPushed = YES;
 	[self.navigationController pushViewController:detail animated:YES];

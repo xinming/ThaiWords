@@ -1,5 +1,5 @@
 //
-//  DetailTableViewController.m
+//  DetailFeedViewController.m
 //  MWFeedParser
 //
 //  Copyright (c) 2010 Michael Waterfall
@@ -27,7 +27,7 @@
 //  THE SOFTWARE.
 //
 
-#import "DetailTableViewController.h"
+#import "DetailFeedViewController.h"
 #import "NSString+HTML.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
@@ -35,7 +35,7 @@ typedef enum { SectionHeader, SectionDetail } Sections;
 typedef enum { SectionHeaderTitle, SectionHeaderDate, SectionHeaderURL } HeaderRows;
 typedef enum { SectionDetailSummary } DetailRows;
 
-@implementation DetailTableViewController
+@implementation DetailFeedViewController
 
 @synthesize item, dateString, summaryString, textV;
 
@@ -176,7 +176,8 @@ typedef enum { SectionDetailSummary } DetailRows;
     ThaiWord *aWord = [[ThaiWord alloc] init];
     
     aWord.word = [self.textV.text substringWithRange:[self.textV selectedRange]];
-    [[RKObjectManager sharedManager] postObject:aWord delegate:self];
+//    [[RKObjectManager sharedManager] postObject:aWord delegate:self];
+    [[RKObjectManager sharedManager] postObject:aWord delegate:(AppDelegate *)[[UIApplication sharedApplication] delegate]];
     [aWord release];
 }
 
@@ -253,13 +254,6 @@ typedef enum { SectionDetailSummary } DetailRows;
     return NO; }
 
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObject:(id)object{
-    NSLog(@"did load object : %@", object);
-}
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error{
-    NSLog(@"%@", error);
-}
 
 
 @end

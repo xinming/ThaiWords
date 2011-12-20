@@ -3,7 +3,7 @@
 @interface VSSpeechSynthesizer : NSObject 
 
 + (id)availableLanguageCodes;
-+ (BOOL)isSystemSpeaking; 
++ (BOOL)isSystemSpeaking;
 - (id)startSpeakingString:(id)string; 
 - (id)startSpeakingString:(id)string toURL:(id)url; 
 - (id)startSpeakingString:(id)string toURL:(id)url withLanguageCode:(id)code; 

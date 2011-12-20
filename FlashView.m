@@ -1,16 +1,16 @@
 //
-//  VocabView.m
+//  FlashView.m
 //  IOSBoilerplate
 //
 //  Created by Xinming Zhao on 10/10/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "VocabView.h"
+#import "FlashView.h"
 #import "NSString+CamelCaseConversion.h"
 #import "NSString+HTML.h"
 
-@implementation VocabView
+@implementation FlashView
 @synthesize title, word;
 - (id)initWithFrame:(CGRect)frame word:(ThaiWord *)theWord
 {
@@ -30,8 +30,9 @@
     title = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 320, 60)];
     [title setTextAlignment:UITextAlignmentCenter];
     [title setBackgroundColor: [UIColor clearColor]];
-    [title setFont:[UIFont fontWithName:@"dtac-Bold" size:46]];
-    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.7]];
+//    [title setFont:[UIFont fontWithName:@"dtac-Bold" size:46]];
+    [title setFont:[UIFont boldSystemFontOfSize:46]];
+    [title setTextColor:[UIColor colorWithWhite:0 alpha:0.65]];
     [title setText:word.word];
     [self addSubview:title];
     
@@ -43,10 +44,10 @@
            ([data isKindOfClass:[NSArray class]] && [(NSArray *)data count]!= 0)||
            ([data isKindOfClass:[NSDictionary class]] && [[(NSDictionary *)data allKeys] count] != 0)
         ){
-            UILabel *label = [VocabView generateLabel:[property fromCamelCaseToDashed] withFrame:CGRectMake(20, contentY, 280, 20)];
+            UILabel *label = [FlashView generateLabel:[property fromCamelCaseToDashed] withFrame:CGRectMake(20, contentY, 280, 20)];
             [self addSubview:label];
             contentY += 24.0;
-            UILabel *content = [VocabView generateGroupedContent:data withFrame:CGRectMake(20, contentY, 280, 45) maxEntries:6];
+            UILabel *content = [FlashView generateGroupedContent:data withFrame:CGRectMake(20, contentY, 280, 45) maxEntries:6];
             [self addSubview:content];
             contentY += content.frame.size.height + 25.0;
         }        
@@ -77,6 +78,7 @@
 + (UILabel *)generateLabel:(NSString *)text withFrame:(CGRect)frame{
     UILabel *label = [[[UILabel alloc] initWithFrame:frame] autorelease];
     label.text = [text uppercaseString];
+    [label setFont:[UIFont boldSystemFontOfSize:16]];
     [label setFont:[UIFont fontWithName:@"dtac-Bold" size:16]];
     [label setTextColor:[UIColor colorWithWhite:0.65 alpha:1]];
     [label setBackgroundColor:[UIColor whiteColor]];

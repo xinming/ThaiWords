@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <RestKit/RestKit.h>
-#import "RootViewController.h"
+#import "FlashCardListController.h"
 #import "VSSpeechSynthesizer.h"
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, RKObjectLoaderDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (retain, nonatomic) VSSpeechSynthesizer *speaker;

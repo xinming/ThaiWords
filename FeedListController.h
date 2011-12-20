@@ -1,5 +1,5 @@
 //
-//  FeedsController.h
+//  FeedListController.h
 //  ThaiWords
 //
 //  Created by Xinming Zhao on 10/29/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedsController : UITableViewController
+@interface FeedListController : UITableViewController
 
 
 @property (nonatomic, retain) NSDictionary *feeds;

@@ -1,15 +1,15 @@
 //
-//  FeedsController.m
+//  FeedListController.m
 //  ThaiWords
 //
 //  Created by Xinming Zhao on 10/29/11.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "FeedsController.h"
+#import "FeedListController.h"
 #import "FeedViewController.h"
 
-@implementation FeedsController
+@implementation FeedListController
 @synthesize feeds;
 - (id)initWithStyle:(UITableViewStyle)style
 {

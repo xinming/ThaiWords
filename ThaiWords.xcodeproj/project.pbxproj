@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		172321DC14594EF800A1C022 /* VoiceServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 172321DB14594EF800A1C022 /* VoiceServices */; };
 		172BC895145BD55D00FF3415 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 172BC894145BD55D00FF3415 /* Feeds.plist */; };
-		172BC898145BD57800FF3415 /* FeedsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC897145BD57800FF3415 /* FeedsController.m */; };
-		172BC8AC145BDA1000FF3415 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89A145BDA1000FF3415 /* DetailTableViewController.m */; };
+		172BC898145BD57800FF3415 /* FeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC897145BD57800FF3415 /* FeedListController.m */; };
+		172BC8AC145BDA1000FF3415 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89A145BDA1000FF3415 /* DetailFeedViewController.m */; };
 		172BC8AD145BDA1000FF3415 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */; };
 		172BC8AE145BDA1000FF3415 /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89E145BDA1000FF3415 /* MWFeedInfo.m */; };
 		172BC8AF145BDA1000FF3415 /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC8A0145BDA1000FF3415 /* MWFeedItem.m */; };
@@ -24,128 +23,80 @@
 		172BC8C1145BE04200FF3415 /* feeds.png in Resources */ = {isa = PBXBuildFile; fileRef = 172BC8C0145BE04200FF3415 /* feeds.png */; };
 		17523941145882CF00484D7C /* thaiwords.png in Resources */ = {isa = PBXBuildFile; fileRef = 17523940145882CF00484D7C /* thaiwords.png */; };
 		1770623A1459185F004C20EB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177062391459185F004C20EB /* CoreText.framework */; };
+		177943A6149B9EC100211A52 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1779439F149B9EB900211A52 /* libRestKit.a */; };
+		177943AE149BA1D200211A52 /* VoiceServices in Frameworks */ = {isa = PBXBuildFile; fileRef = 177943AB149BA07F00211A52 /* VoiceServices */; settings = {ATTRIBUTES = (Weak, ); }; };
+		177943C0149BA70B00211A52 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 177943BF149BA70B00211A52 /* libxml2.dylib */; };
+		177943C2149BA74300211A52 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177943C1149BA74300211A52 /* Security.framework */; };
+		177943C4149BA75300211A52 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 177943C3149BA75300211A52 /* CoreData.framework */; };
 		17827187145861B900F47964 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827186145861B900F47964 /* UIKit.framework */; };
 		17827189145861B900F47964 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17827188145861B900F47964 /* Foundation.framework */; };
 		1782718B145861B900F47964 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1782718A145861B900F47964 /* CoreGraphics.framework */; };
 		17827191145861B900F47964 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1782718F145861B900F47964 /* InfoPlist.strings */; };
 		17827193145861B900F47964 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17827192145861B900F47964 /* main.m */; };
 		17827197145861B900F47964 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17827196145861B900F47964 /* AppDelegate.m */; };
-		178271C9145862BA00F47964 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271BE1458622200F47964 /* libRestKitJSONParserJSONKit.a */; };
-		178271CA145862BA00F47964 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271B21458622200F47964 /* libRestKitNetwork.a */; };
-		178271CB145862BA00F47964 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271B41458622200F47964 /* libRestKitObjectMapping.a */; };
-		178271CC145862BA00F47964 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271B61458622200F47964 /* libRestKitSupport.a */; };
 		178271CF145862D500F47964 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271CE145862D500F47964 /* CFNetwork.framework */; };
 		178271D1145862DF00F47964 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271D0145862DF00F47964 /* MobileCoreServices.framework */; };
 		178271D3145862E800F47964 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178271D2145862E800F47964 /* SystemConfiguration.framework */; };
 		178271D8145863A000F47964 /* FlashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271D5145863A000F47964 /* FlashViewController.m */; };
 		178271D9145863A000F47964 /* ThaiWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271D7145863A000F47964 /* ThaiWord.m */; };
-		178271DC145863AE00F47964 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271DB145863AE00F47964 /* RootViewController.m */; };
-		178271DF145863B300F47964 /* VocabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271DE145863B300F47964 /* VocabView.m */; };
+		178271DC145863AE00F47964 /* FlashCardListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271DB145863AE00F47964 /* FlashCardListController.m */; };
+		178271DF145863B300F47964 /* FlashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178271DE145863B300F47964 /* FlashView.m */; };
 		178271EA145863E300F47964 /* dtacBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 178271E8145863E300F47964 /* dtacBold.ttf */; };
 		178271EB145863E300F47964 /* dtacRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 178271E9145863E300F47964 /* dtacRegular.ttf */; };
 		178271ED145863F300F47964 /* concrete_wall.png in Resources */ = {isa = PBXBuildFile; fileRef = 178271EC145863F300F47964 /* concrete_wall.png */; };
 		178272051458658F00F47964 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178272041458658F00F47964 /* QuartzCore.framework */; };
 		1782722F1458793200F47964 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1782721E1458793200F47964 /* SVProgressHUD.bundle */; };
 		178272301458793200F47964 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 178272201458793200F47964 /* SVProgressHUD.m */; };
+		17AE0C8114601E7B00339BFD /* TDBadgedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AE0C8014601E7B00339BFD /* TDBadgedCell.m */; };
 		17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */; };
 		17B3C389145C72E3003EE78F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17B3C388145C72E3003EE78F /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		178271B11458622200F47964 /* PBXContainerItemProxy */ = {
+		1779439E149B9EB900211A52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A07FC1255161B00976E89;
-			remoteInfo = RestKitNetwork;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
 		};
-		178271B31458622200F47964 /* PBXContainerItemProxy */ = {
+		177943A0149B9EB900211A52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A08031255162C00976E89;
-			remoteInfo = RestKitObjectMapping;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
 		};
-		178271B51458622200F47964 /* PBXContainerItemProxy */ = {
+		177943A2149B9EB900211A52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A080C12551D3000976E89;
-			remoteInfo = RestKitSupport;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
 		};
-		178271B71458622200F47964 /* PBXContainerItemProxy */ = {
+		177943A4149B9EB900211A52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 20808DBD13DE8CDC000A156A;
-			remoteInfo = "RestKitJSONParser+NXJSON";
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
 		};
-		178271B91458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E64F125231F600531FA8;
-			remoteInfo = "RestKitJSONParser+YAJL";
-		};
-		178271BB1458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E66B1252353700531FA8;
-			remoteInfo = "RestKitJSONParser+SBJSON";
-		};
-		178271BD1458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 73057FD11331AD2E001908EE;
-			remoteInfo = "RestKitJSONParser+JSONKit";
-		};
-		178271BF1458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
-			remoteInfo = "RestKitXMLParser+Libxml";
-		};
-		178271C11458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A081412551D5300976E89;
-			remoteInfo = RestKitCoreData;
-		};
-		178271C31458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2523360511E79F090048F9B4;
-			remoteInfo = RestKitThree20;
-		};
-		178271C51458622200F47964 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
-			remoteInfo = "RestKit Specs";
-		};
-		178271C7145862A100F47964 /* PBXContainerItemProxy */ = {
+		177943A9149BA03A00211A52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		172321D914594DDE00A1C022 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		172321DB14594EF800A1C022 /* VoiceServices */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = VoiceServices; path = "Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices"; sourceTree = DEVELOPER_DIR; };
 		172BC894145BD55D00FF3415 /* Feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
-		172BC896145BD57800FF3415 /* FeedsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedsController.h; path = ../FeedsController.h; sourceTree = "<group>"; };
-		172BC897145BD57800FF3415 /* FeedsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedsController.m; path = ../FeedsController.m; sourceTree = "<group>"; };
-		172BC899145BDA1000FF3415 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
-		172BC89A145BDA1000FF3415 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		172BC896145BD57800FF3415 /* FeedListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedListController.h; path = ../FeedListController.h; sourceTree = "<group>"; };
+		172BC897145BD57800FF3415 /* FeedListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeedListController.m; path = ../FeedListController.m; sourceTree = "<group>"; };
+		172BC899145BDA1000FF3415 /* DetailFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFeedViewController.h; sourceTree = "<group>"; };
+		172BC89A145BDA1000FF3415 /* DetailFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFeedViewController.m; sourceTree = "<group>"; };
 		172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
 		172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		172BC89D145BDA1000FF3415 /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWFeedInfo.h; sourceTree = "<group>"; };
@@ -168,6 +119,10 @@
 		172BC8C0145BE04200FF3415 /* feeds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feeds.png; sourceTree = "<group>"; };
 		17523940145882CF00484D7C /* thaiwords.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thaiwords.png; sourceTree = "<group>"; };
 		177062391459185F004C20EB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		177943AB149BA07F00211A52 /* VoiceServices */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = VoiceServices; path = System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices; sourceTree = SDKROOT; };
+		177943BF149BA70B00211A52 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		177943C1149BA74300211A52 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		177943C3149BA75300211A52 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		17827182145861B900F47964 /* ThaiWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThaiWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17827186145861B900F47964 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17827188145861B900F47964 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -186,10 +141,10 @@
 		178271D5145863A000F47964 /* FlashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashViewController.m; path = ../FlashViewController.m; sourceTree = "<group>"; };
 		178271D6145863A000F47964 /* ThaiWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThaiWord.h; path = ../ThaiWord.h; sourceTree = "<group>"; };
 		178271D7145863A000F47964 /* ThaiWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThaiWord.m; path = ../ThaiWord.m; sourceTree = "<group>"; };
-		178271DA145863AE00F47964 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../RootViewController.h; sourceTree = "<group>"; };
-		178271DB145863AE00F47964 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../RootViewController.m; sourceTree = "<group>"; };
-		178271DD145863B300F47964 /* VocabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VocabView.h; path = ../VocabView.h; sourceTree = "<group>"; };
-		178271DE145863B300F47964 /* VocabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VocabView.m; path = ../VocabView.m; sourceTree = "<group>"; };
+		178271DA145863AE00F47964 /* FlashCardListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashCardListController.h; path = ../FlashCardListController.h; sourceTree = "<group>"; };
+		178271DB145863AE00F47964 /* FlashCardListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashCardListController.m; path = ../FlashCardListController.m; sourceTree = "<group>"; };
+		178271DD145863B300F47964 /* FlashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashView.h; path = ../FlashView.h; sourceTree = "<group>"; };
+		178271DE145863B300F47964 /* FlashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashView.m; path = ../FlashView.m; sourceTree = "<group>"; };
 		178271E8145863E300F47964 /* dtacBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dtacBold.ttf; sourceTree = "<group>"; };
 		178271E9145863E300F47964 /* dtacRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dtacRegular.ttf; sourceTree = "<group>"; };
 		178271EC145863F300F47964 /* concrete_wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = concrete_wall.png; sourceTree = "<group>"; };
@@ -197,6 +152,8 @@
 		1782721E1458793200F47964 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		1782721F1458793200F47964 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		178272201458793200F47964 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		17AE0C7F14601E7B00339BFD /* TDBadgedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TDBadgedCell.h; sourceTree = "<group>"; };
+		17AE0C8014601E7B00339BFD /* TDBadgedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TDBadgedCell.m; sourceTree = "<group>"; };
 		17B3C382145C606F003EE78F /* NSString+CamelCaseConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CamelCaseConversion.h"; sourceTree = "<group>"; };
 		17B3C383145C606F003EE78F /* NSString+CamelCaseConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CamelCaseConversion.m"; sourceTree = "<group>"; };
 		17B3C385145C6DE1003EE78F /* VSSpeechSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSSpeechSynthesizer.h; path = ../VSSpeechSynthesizer.h; sourceTree = "<group>"; };
@@ -208,16 +165,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				172321DC14594EF800A1C022 /* VoiceServices in Frameworks */,
+				177943C4149BA75300211A52 /* CoreData.framework in Frameworks */,
+				177943C2149BA74300211A52 /* Security.framework in Frameworks */,
+				177943C0149BA70B00211A52 /* libxml2.dylib in Frameworks */,
+				177943AE149BA1D200211A52 /* VoiceServices in Frameworks */,
+				177943A6149B9EC100211A52 /* libRestKit.a in Frameworks */,
 				1770623A1459185F004C20EB /* CoreText.framework in Frameworks */,
 				178272051458658F00F47964 /* QuartzCore.framework in Frameworks */,
 				178271D3145862E800F47964 /* SystemConfiguration.framework in Frameworks */,
 				178271D1145862DF00F47964 /* MobileCoreServices.framework in Frameworks */,
 				178271CF145862D500F47964 /* CFNetwork.framework in Frameworks */,
-				178271C9145862BA00F47964 /* libRestKitJSONParserJSONKit.a in Frameworks */,
-				178271CA145862BA00F47964 /* libRestKitNetwork.a in Frameworks */,
-				178271CB145862BA00F47964 /* libRestKitObjectMapping.a in Frameworks */,
-				178271CC145862BA00F47964 /* libRestKitSupport.a in Frameworks */,
 				17827187145861B900F47964 /* UIKit.framework in Frameworks */,
 				17827189145861B900F47964 /* Foundation.framework in Frameworks */,
 				1782718B145861B900F47964 /* CoreGraphics.framework in Frameworks */,
@@ -227,6 +184,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		171405E61461BC0400A88544 /* FlashCards */ = {
+			isa = PBXGroup;
+			children = (
+				178271DA145863AE00F47964 /* FlashCardListController.h */,
+				178271DB145863AE00F47964 /* FlashCardListController.m */,
+				178271DD145863B300F47964 /* FlashView.h */,
+				178271DE145863B300F47964 /* FlashView.m */,
+				178271D4145863A000F47964 /* FlashViewController.h */,
+				178271D5145863A000F47964 /* FlashViewController.m */,
+			);
+			name = FlashCards;
+			sourceTree = "<group>";
+		};
+		171405E71461BD1900A88544 /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				172BC899145BDA1000FF3415 /* DetailFeedViewController.h */,
+				172BC89A145BDA1000FF3415 /* DetailFeedViewController.m */,
+				172BC896145BD57800FF3415 /* FeedListController.h */,
+				172BC897145BD57800FF3415 /* FeedListController.m */,
+				172BC8B7145BDAE900FF3415 /* FeedViewController.h */,
+				172BC8B8145BDAE900FF3415 /* FeedViewController.m */,
+			);
+			name = Feeds;
+			sourceTree = "<group>";
+		};
 		172BC8B5145BDA2600FF3415 /* MWFeedParser */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +227,8 @@
 		172BC8B6145BDA3800FF3415 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */,
+				172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */,
 				172BC8A6145BDA1000FF3415 /* NSDate+InternetDateTime.h */,
 				172BC8A7145BDA1000FF3415 /* NSDate+InternetDateTime.m */,
 				172BC8A8145BDA1000FF3415 /* NSString+HTML.h */,
@@ -259,13 +244,15 @@
 		17827177145861B900F47964 = {
 			isa = PBXGroup;
 			children = (
+				177943C3149BA75300211A52 /* CoreData.framework */,
+				177943C1149BA74300211A52 /* Security.framework */,
+				177943BF149BA70B00211A52 /* libxml2.dylib */,
+				177943AB149BA07F00211A52 /* VoiceServices */,
 				17B3C388145C72E3003EE78F /* Settings.bundle */,
-				1782719D1458622100F47964 /* RestKit.xcodeproj */,
 				1782718C145861B900F47964 /* ThaiWords */,
 				17827185145861B900F47964 /* Frameworks */,
 				17827183145861B900F47964 /* Products */,
 				17827206145865DF00F47964 /* Assets */,
-				178272091458793200F47964 /* SVProgressHUD */,
 			);
 			sourceTree = "<group>";
 		};
@@ -280,7 +267,9 @@
 		17827185145861B900F47964 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				172321DB14594EF800A1C022 /* VoiceServices */,
+				1782719D1458622100F47964 /* RestKit.xcodeproj */,
+				178272091458793200F47964 /* SVProgressHUD */,
+				17AE0C7E14601E7B00339BFD /* TDBadgedCell */,
 				172321D914594DDE00A1C022 /* AVFoundation.framework */,
 				177062391459185F004C20EB /* CoreText.framework */,
 				178272041458658F00F47964 /* QuartzCore.framework */,
@@ -297,24 +286,12 @@
 		1782718C145861B900F47964 /* ThaiWords */ = {
 			isa = PBXGroup;
 			children = (
-				172BC899145BDA1000FF3415 /* DetailTableViewController.h */,
-				172BC89A145BDA1000FF3415 /* DetailTableViewController.m */,
-				172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */,
-				172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */,
+				171405E71461BD1900A88544 /* Feeds */,
 				172BC8B5145BDA2600FF3415 /* MWFeedParser */,
 				172BC8B6145BDA3800FF3415 /* Categories */,
-				172BC896145BD57800FF3415 /* FeedsController.h */,
-				172BC897145BD57800FF3415 /* FeedsController.m */,
-				172BC8B7145BDAE900FF3415 /* FeedViewController.h */,
-				172BC8B8145BDAE900FF3415 /* FeedViewController.m */,
-				178271D4145863A000F47964 /* FlashViewController.h */,
-				178271D5145863A000F47964 /* FlashViewController.m */,
+				171405E61461BC0400A88544 /* FlashCards */,
 				178271D6145863A000F47964 /* ThaiWord.h */,
 				178271D7145863A000F47964 /* ThaiWord.m */,
-				178271DA145863AE00F47964 /* RootViewController.h */,
-				178271DB145863AE00F47964 /* RootViewController.m */,
-				178271DD145863B300F47964 /* VocabView.h */,
-				178271DE145863B300F47964 /* VocabView.m */,
 				17827195145861B900F47964 /* AppDelegate.h */,
 				17827196145861B900F47964 /* AppDelegate.m */,
 				17B3C385145C6DE1003EE78F /* VSSpeechSynthesizer.h */,
@@ -337,17 +314,10 @@
 		1782719E1458622100F47964 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				178271B21458622200F47964 /* libRestKitNetwork.a */,
-				178271B41458622200F47964 /* libRestKitObjectMapping.a */,
-				178271B61458622200F47964 /* libRestKitSupport.a */,
-				178271B81458622200F47964 /* libRestKitJSONParserNXJSON.a */,
-				178271BA1458622200F47964 /* libRestKitJSONParserYAJL.a */,
-				178271BC1458622200F47964 /* libRestKitJSONParserSBJSON.a */,
-				178271BE1458622200F47964 /* libRestKitJSONParserJSONKit.a */,
-				178271C01458622200F47964 /* libRestKitXMLParserLibxml.a */,
-				178271C21458622200F47964 /* libRestKitCoreData.a */,
-				178271C41458622200F47964 /* libRestKitThree20.a */,
-				178271C61458622200F47964 /* RestKitSpecs.app */,
+				1779439F149B9EB900211A52 /* libRestKit.a */,
+				177943A1149B9EB900211A52 /* RestKitTests.octest */,
+				177943A3149B9EB900211A52 /* RestKit.framework */,
+				177943A5149B9EB900211A52 /* RestKitFrameworkTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -385,6 +355,15 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		17AE0C7E14601E7B00339BFD /* TDBadgedCell */ = {
+			isa = PBXGroup;
+			children = (
+				17AE0C7F14601E7B00339BFD /* TDBadgedCell.h */,
+				17AE0C8014601E7B00339BFD /* TDBadgedCell.m */,
+			);
+			path = TDBadgedCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,7 +378,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				178271C8145862A100F47964 /* PBXTargetDependency */,
+				177943AA149BA03A00211A52 /* PBXTargetDependency */,
 			);
 			name = ThaiWords;
 			productName = ThaiWords;
@@ -438,81 +417,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		178271B21458622200F47964 /* libRestKitNetwork.a */ = {
+		1779439F149B9EB900211A52 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRestKitNetwork.a;
-			remoteRef = 178271B11458622200F47964 /* PBXContainerItemProxy */;
+			path = libRestKit.a;
+			remoteRef = 1779439E149B9EB900211A52 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		178271B41458622200F47964 /* libRestKitObjectMapping.a */ = {
+		177943A1149B9EB900211A52 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitObjectMapping.a;
-			remoteRef = 178271B31458622200F47964 /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 177943A0149B9EB900211A52 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		178271B61458622200F47964 /* libRestKitSupport.a */ = {
+		177943A3149B9EB900211A52 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitSupport.a;
-			remoteRef = 178271B51458622200F47964 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 177943A2149B9EB900211A52 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		178271B81458622200F47964 /* libRestKitJSONParserNXJSON.a */ = {
+		177943A5149B9EB900211A52 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserNXJSON.a;
-			remoteRef = 178271B71458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271BA1458622200F47964 /* libRestKitJSONParserYAJL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserYAJL.a;
-			remoteRef = 178271B91458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271BC1458622200F47964 /* libRestKitJSONParserSBJSON.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserSBJSON.a;
-			remoteRef = 178271BB1458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271BE1458622200F47964 /* libRestKitJSONParserJSONKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserJSONKit.a;
-			remoteRef = 178271BD1458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271C01458622200F47964 /* libRestKitXMLParserLibxml.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitXMLParserLibxml.a;
-			remoteRef = 178271BF1458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271C21458622200F47964 /* libRestKitCoreData.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitCoreData.a;
-			remoteRef = 178271C11458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271C41458622200F47964 /* libRestKitThree20.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitThree20.a;
-			remoteRef = 178271C31458622200F47964 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		178271C61458622200F47964 /* RestKitSpecs.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RestKitSpecs.app;
-			remoteRef = 178271C51458622200F47964 /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 177943A4149B9EB900211A52 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -547,11 +477,11 @@
 				17827197145861B900F47964 /* AppDelegate.m in Sources */,
 				178271D8145863A000F47964 /* FlashViewController.m in Sources */,
 				178271D9145863A000F47964 /* ThaiWord.m in Sources */,
-				178271DC145863AE00F47964 /* RootViewController.m in Sources */,
-				178271DF145863B300F47964 /* VocabView.m in Sources */,
+				178271DC145863AE00F47964 /* FlashCardListController.m in Sources */,
+				178271DF145863B300F47964 /* FlashView.m in Sources */,
 				178272301458793200F47964 /* SVProgressHUD.m in Sources */,
-				172BC898145BD57800FF3415 /* FeedsController.m in Sources */,
-				172BC8AC145BDA1000FF3415 /* DetailTableViewController.m in Sources */,
+				172BC898145BD57800FF3415 /* FeedListController.m in Sources */,
+				172BC8AC145BDA1000FF3415 /* DetailFeedViewController.m in Sources */,
 				172BC8AD145BDA1000FF3415 /* GTMNSString+HTML.m in Sources */,
 				172BC8AE145BDA1000FF3415 /* MWFeedInfo.m in Sources */,
 				172BC8AF145BDA1000FF3415 /* MWFeedItem.m in Sources */,
@@ -561,16 +491,17 @@
 				172BC8B4145BDA1000FF3415 /* NSString+XMLEntities.m in Sources */,
 				172BC8B9145BDAE900FF3415 /* FeedViewController.m in Sources */,
 				17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */,
+				17AE0C8114601E7B00339BFD /* TDBadgedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		178271C8145862A100F47964 /* PBXTargetDependency */ = {
+		177943AA149BA03A00211A52 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RestKit;
-			targetProxy = 178271C7145862A100F47964 /* PBXContainerItemProxy */;
+			targetProxy = 177943A9149BA03A00211A52 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -610,8 +541,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-				PROVISIONING_PROFILE = "6363FFCC-D68C-4B76-AA4D-6A58299D348A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6363FFCC-D68C-4B76-AA4D-6A58299D348A";
+				PROVISIONING_PROFILE = "BA0EAE7E-4017-4BC7-B376-225CE0E8CEA2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BA0EAE7E-4017-4BC7-B376-225CE0E8CEA2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = NO;
 			};
@@ -649,9 +580,13 @@
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/Lastest/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/VoiceServices.framework\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -667,9 +602,13 @@
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/4.2.1 (8C148a)/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+					"\"$(DEVELOPER_DIR)/Platforms/iPhoneOS.platform/DeviceSupport/Lastest/Symbols/System/Library/PrivateFrameworks/VoiceServices.framework\"",
+					"\"$(SDKROOT)$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks/VoiceServices.framework\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -7,7 +7,7 @@
 //
 
 #import "FlashViewController.h"
-#import "VocabView.h"
+#import "FlashView.h"
 #import "ThaiWord.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
@@ -48,7 +48,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    VocabView *vv = [[[VocabView alloc] initWithFrame:CGRectMake(0, 0, 320, 460) word:self.word] autorelease];
+    FlashView *vv = [[[FlashView alloc] initWithFrame:CGRectMake(0, 0, 320, 460) word:self.word] autorelease];
     self.view = vv;
     
 }
@@ -62,20 +62,32 @@
 
 
 - (void) viewWillAppear:(BOOL)animated{
-//    self.navigationController.toolbarHidden = NO;    
-//    [self.navigationController.toolbar setTintColor:[UIColor colorWithWhite:0.3 alpha:1]];
-//    self.navigationController.toolbar.layer.shadowOffset = CGSizeMake(0, -1);
-//    self.navigationController.toolbar.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.navigationController.toolbar.layer.shadowOpacity = 0.5;
-//    self.navigationController.toolbar.layer.shadowRadius = 1;
-//    self.navigationController.toolbar.layer.shouldRasterize = YES;
+    self.navigationController.toolbarHidden = NO;    
+    [self.navigationController.toolbar setTintColor:[UIColor colorWithWhite:0.3 alpha:1]];
+    self.navigationController.toolbar.layer.shadowOffset = CGSizeMake(0, -1);
+    self.navigationController.toolbar.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.navigationController.toolbar.layer.shadowOpacity = 0.5;
+    self.navigationController.toolbar.layer.shadowRadius = 1;
+    self.navigationController.toolbar.layer.shouldRasterize = YES;
     
-    UIBarButtonItem *speakButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(speakWord)];
-//    UIBarButtonItem	*flex = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
-//    flex.width = 10.0;
+    UIBarButtonItem *speakButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay 
+                                                                                 target:self 
+                                                                                 action:@selector(speakWord)] autorelease];
+
+    UIBarButtonItem *deleteButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash 
+                                                                                  target:self 
+                                                                                  action:@selector(promptDeleteWord)] autorelease];
+
+    UIBarButtonItem	*fixed = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace 
+                                                                            target:nil 
+                                                                            action:nil] autorelease];
+    fixed.width = 10.0;
+    UIBarButtonItem	*flex = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                           target:nil 
+                                                                           action:nil] autorelease];
+
     
-//    [self setToolbarItems:[NSArray arrayWithObjects:flex, speakButton, nil]];
-    [self.navigationItem setRightBarButtonItem:speakButton];
+    [self setToolbarItems:[NSArray arrayWithObjects:fixed, speakButton, flex, deleteButton, fixed, nil]];
 }
 
 
@@ -86,6 +98,35 @@
 - (void)speakWord{
     [(AppDelegate *)[[UIApplication sharedApplication] delegate] speakWord:self.word.word];
 }
+
+- (void)promptDeleteWord
+{
+    UIAlertView * deletePrompt = [[[UIAlertView alloc] initWithTitle:@"Confirmation" 
+                                                            message:@"Are you sure to delete this word? " 
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel" 
+                                                  otherButtonTitles:@"OK", nil] autorelease];
+    [deletePrompt show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        [self deleteWord];
+    }
+}
+
+- (void)deleteWord{
+    FlashCardListController *parentController = (FlashCardListController *)[self.navigationController.viewControllers objectAtIndex:0];
+    [[RKObjectManager sharedManager] deleteObject:self.word 
+                                         delegate:parentController];
+
+
+    [parentController.thaiWords removeObject:self.word];
+    [parentController.tableView reloadData];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <RestKit/RestKit.h>
 #import "ThaiWord.h"
-#import "FeedsController.h"
+#import "FeedListController.h"
 
 @implementation AppDelegate
 
@@ -25,25 +25,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     [self initializeDataMappping];
+    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+
+    
+    self.window.backgroundColor = [UIColor whiteColor];
     self.speaker = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
     [speaker setRate:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speech_rate"] doubleValue]];
     UITabBarController *tabController = [[UITabBarController alloc] init];
     NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:3];
     
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
-                                       [[[RootViewController alloc] initWithName:@"Vocabulary" completed:NO] autorelease]
+                                       [[[FlashCardListController alloc] initWithName:@"Vocabulary" completed:NO] autorelease]
                                        ] autorelease]];
     
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
-                                       [[[RootViewController alloc] initWithName:@"Review" completed:YES] autorelease]
+                                       [[[FlashCardListController alloc] initWithName:@"Review" completed:YES] autorelease]
                                        ] autorelease]];
 
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController:
-                                       [[[FeedsController alloc] initWithStyle:UITableViewStylePlain] autorelease]] autorelease]];
+                                       [[[FeedListController alloc] initWithStyle:UITableViewStylePlain] autorelease]] autorelease]];
     
     
     for (UINavigationController *(navCon) in localControllersArray) {
@@ -65,12 +66,15 @@
 
 - (void)initializeDataMappping
 {
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://ohho.in.th:5000"];
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://thai.ohho.in.th:8080"];
 //    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:3000"];
-    [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words" forMethod:RKRequestMethodPOST];
+    [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];
+    [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodDELETE];
+
     
     RKObjectMapping* mapping = [RKObjectMapping mappingForClass:[ThaiWord class]];
+    [mapping setRootKeyPath:@""];
     [mapping mapKeyPath:@"thai_word[is_done]" toAttribute:@"isDone"];
     [mapping mapKeyPath:@"thai_word[word]" toAttribute:@"word"];
     [manager.mappingProvider setSerializationMapping:[mapping inverseMapping] forClass:[ThaiWord class]];
@@ -117,5 +121,15 @@
 - (void)speakWord:(NSString *) text{
     [speaker startSpeakingString:text toURL:nil withLanguageCode:@"th-TH"];
 }
+
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObject:(id)object{
+    NSLog(@"did load object : %@", object);
+}
+
+- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error{
+    NSLog(@"%@", error);
+}
+
 
 @end
