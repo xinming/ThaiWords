@@ -30,14 +30,18 @@
 #import <RestKit/RestKit.h>
 #import "SVProgressHUD.h"
 
+#define VIEW_NEWEST 1
+#define VIEW_FREQUENT 2
+#define VIEW_REVIEW 3
+
 @interface FlashCardListController : UITableViewController <RKObjectLoaderDelegate, UIAlertViewDelegate> {
 }
 
 @property (nonatomic, retain) NSMutableArray* thaiWords;
 @property (nonatomic, assign) int page;
-@property (nonatomic, assign) BOOL isCompleted;
+@property (nonatomic, assign) int view_type;
 @property (nonatomic, retain) UIAlertView * alertBox;
-- (id)initWithName:(NSString *)name completed:(BOOL)completed;
+- (id)initWithName:(NSString *)name withViewType: (int)theViewType;
 - (void)index:(NSNumber*) page;
 - (void)addWord;
 

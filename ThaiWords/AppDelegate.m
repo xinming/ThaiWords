@@ -11,11 +11,19 @@
 #import <RestKit/RestKit.h>
 #import "ThaiWord.h"
 #import "FeedListController.h"
+#import "NSArray+PerformSelector.h"
+
+@interface AppDelegate ()
+- (NSArray *)segmentViewControllers;
+//- (void)firstUserExperience;
+- (void)prepareSegmentsControllers;
+@end
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize speaker;
+@synthesize segmentedControl, segmentsController;
 
 - (void)dealloc
 {
@@ -27,21 +35,17 @@
 {
     [self initializeDataMappping];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-
-    
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
     self.speaker = [[NSClassFromString(@"VSSpeechSynthesizer") alloc] init];
     [speaker setRate:[[[NSUserDefaults standardUserDefaults] objectForKey:@"speech_rate"] doubleValue]];
     UITabBarController *tabController = [[UITabBarController alloc] init];
-    NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:3];
+    NSMutableArray *localControllersArray = [[NSMutableArray alloc] initWithCapacity:2];
+        
+    [self prepareSegmentsControllers];
     
-    [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
-                                       [[[FlashCardListController alloc] initWithName:@"Vocabulary" completed:NO] autorelease]
-                                       ] autorelease]];
-    
-    [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController: 
-                                       [[[FlashCardListController alloc] initWithName:@"Review" completed:YES] autorelease]
-                                       ] autorelease]];
+    [localControllersArray addObject: self.segmentsController.navigationController];
 
     [localControllersArray addObject:[[[UINavigationController alloc] initWithRootViewController:
                                        [[[FeedListController alloc] initWithStyle:UITableViewStylePlain] autorelease]] autorelease]];
@@ -57,7 +61,7 @@
     }
     
     [tabController setViewControllers:localControllersArray];
-
+    [localControllersArray release];
     
     [self.window addSubview:tabController.view];
     [self.window makeKeyAndVisible];
@@ -66,7 +70,7 @@
 
 - (void)initializeDataMappping
 {
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://thai.ohho.in.th:8080"];
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://active-thai.herokuapp.com"];
 //    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:3000"];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words" forMethod:RKRequestMethodPOST];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];
@@ -79,6 +83,42 @@
     [mapping mapKeyPath:@"thai_word[word]" toAttribute:@"word"];
     [manager.mappingProvider setSerializationMapping:[mapping inverseMapping] forClass:[ThaiWord class]];
 }
+
+
+
+#pragma mark -
+#pragma mark SegmentationViewControllers
+
+
+- (NSArray *)segmentViewControllers {
+    NSMutableArray* viewControllers = [[NSMutableArray alloc] initWithCapacity:3];
+   [viewControllers addObject:[[[FlashCardListController alloc] initWithName:@"Newest" withViewType:VIEW_NEWEST] autorelease]];
+   
+   [viewControllers addObject:[[[FlashCardListController alloc] initWithName:@"Frequent" withViewType:VIEW_FREQUENT] autorelease]];
+
+    [viewControllers addObject:[[[FlashCardListController alloc] initWithName:@"Review" withViewType:VIEW_REVIEW] autorelease]];
+    return viewControllers;
+}
+
+- (void)prepareSegmentsControllers {
+    UINavigationController * VocabNavigationController = [[[UINavigationController alloc] init] autorelease];
+    
+    NSArray * viewControllers = [self segmentViewControllers];
+    self.segmentsController = [[SegmentsController alloc] initWithNavigationController:VocabNavigationController viewControllers:viewControllers];
+    
+    self.segmentedControl = [[UISegmentedControl alloc] initWithItems:[viewControllers arrayByPerformingSelector:@selector(title)]];
+    self.segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+    
+    [self.segmentedControl addTarget:self.segmentsController
+                              action:@selector(indexDidChangeForSegmentedControl:)
+                    forControlEvents:UIControlEventValueChanged];
+    
+    self.segmentedControl.selectedSegmentIndex = 0;
+    [self.segmentsController indexDidChangeForSegmentedControl:self.segmentedControl];
+}
+
+
+#pragma mark - System Methods
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
@@ -130,6 +170,7 @@
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error{
     NSLog(@"%@", error);
 }
+
 
 
 @end

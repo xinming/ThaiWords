@@ -31,24 +31,20 @@
 #import "FlashViewController.h"
 #import "SVProgressHUD.h"
 #import "TDBadgedCell.h"
+
+
+
 @implementation FlashCardListController
 
-@synthesize thaiWords, page, isCompleted, alertBox;
+@synthesize thaiWords, page, alertBox, view_type;
 
 
-- (id)initWithName:(NSString *)name completed:(BOOL)completed{
+- (id)initWithName:(NSString *)name withViewType: (int) theViewType{
     self = [super initWithStyle:UITableViewStylePlain];
-    if (completed) {
-        self.isCompleted = YES;
-        self.title = @"Review";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Review" image:[UIImage imageNamed:@"review.png"] tag:1];
-    }else{
-        self.isCompleted = NO;
-        self.title = @"Vocabulary";
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Vocabulary" image:[UIImage imageNamed:@"vocabs.png"] tag:2];
+    self.title = name;
+    self.view_type = theViewType;
+    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Vocabulary" image:[UIImage imageNamed:@"vocabs.png"] tag:2];
 
-    }
-    
     return self;
 }
 
@@ -66,7 +62,7 @@
     self.navigationItem.rightBarButtonItem = refreshButton;
     
     
-    if(!self.isCompleted){
+    if(true){
         UIBarButtonItem *addButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addWord)] autorelease];
         self.navigationItem.leftBarButtonItem = addButton;
     }
@@ -138,18 +134,29 @@
     
     
     NSDictionary *params;
-    if(self.isCompleted){
-        params = [NSDictionary dictionaryWithObjectsAndKeys:
-                                load_page, @"page",
-                                [NSNumber numberWithInt:1], @"completed",
-                                nil];
-    }else{
-        params = [NSDictionary dictionaryWithObjectsAndKeys:
-                                load_page, @"page",
-                                [NSNumber numberWithInt:1], @"to_be_completed",
-                                nil];
+    
+    switch (self.view_type) {
+        case VIEW_NEWEST:
+            params = [NSDictionary dictionaryWithObjectsAndKeys:
+                      load_page, @"page",
+                      [NSNumber numberWithInt:1], @"to_be_completed",
+                      nil];
+            break;
+        case VIEW_FREQUENT:
+            params = [NSDictionary dictionaryWithObjectsAndKeys:
+                      load_page, @"page",
+                      [NSNumber numberWithInt:1], @"by_frequency",
+                      nil];
+            break;
+        case VIEW_REVIEW:
+            params = [NSDictionary dictionaryWithObjectsAndKeys:
+                      load_page, @"page",
+                      [NSNumber numberWithInt:1], @"completed",
+                      nil];
+            break;
+        default:
+            break;
     }
-
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:[@"/thai_words.json" appendQueryParams: params]
                                                   objectMapping:[ThaiWord mapping] delegate:self];
 }
@@ -312,7 +319,7 @@
         return NO;
     }
     
-    return(!self.isCompleted);
+    return(self.view_type != VIEW_REVIEW);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{

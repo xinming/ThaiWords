@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171B6743150BBE1E003CD612 /* NSArray+PerformSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 171B6742150BBE1E003CD612 /* NSArray+PerformSelector.m */; };
+		171B6746150BBE27003CD612 /* SegmentsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171B6745150BBE27003CD612 /* SegmentsController.m */; };
 		172BC895145BD55D00FF3415 /* Feeds.plist in Resources */ = {isa = PBXBuildFile; fileRef = 172BC894145BD55D00FF3415 /* Feeds.plist */; };
 		172BC898145BD57800FF3415 /* FeedListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC897145BD57800FF3415 /* FeedListController.m */; };
 		172BC8AC145BDA1000FF3415 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 172BC89A145BDA1000FF3415 /* DetailFeedViewController.m */; };
@@ -91,6 +93,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171B6741150BBE1E003CD612 /* NSArray+PerformSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PerformSelector.h"; sourceTree = "<group>"; };
+		171B6742150BBE1E003CD612 /* NSArray+PerformSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PerformSelector.m"; sourceTree = "<group>"; };
+		171B6744150BBE27003CD612 /* SegmentsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentsController.h; sourceTree = "<group>"; };
+		171B6745150BBE27003CD612 /* SegmentsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentsController.m; sourceTree = "<group>"; };
 		172321D914594DDE00A1C022 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		172BC894145BD55D00FF3415 /* Feeds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feeds.plist; sourceTree = "<group>"; };
 		172BC896145BD57800FF3415 /* FeedListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeedListController.h; path = ../FeedListController.h; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 		171405E61461BC0400A88544 /* FlashCards */ = {
 			isa = PBXGroup;
 			children = (
+				171B6744150BBE27003CD612 /* SegmentsController.h */,
+				171B6745150BBE27003CD612 /* SegmentsController.m */,
 				178271DA145863AE00F47964 /* FlashCardListController.h */,
 				178271DB145863AE00F47964 /* FlashCardListController.m */,
 				178271DD145863B300F47964 /* FlashView.h */,
@@ -227,6 +235,8 @@
 		172BC8B6145BDA3800FF3415 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				171B6741150BBE1E003CD612 /* NSArray+PerformSelector.h */,
+				171B6742150BBE1E003CD612 /* NSArray+PerformSelector.m */,
 				172BC89B145BDA1000FF3415 /* GTMNSString+HTML.h */,
 				172BC89C145BDA1000FF3415 /* GTMNSString+HTML.m */,
 				172BC8A6145BDA1000FF3415 /* NSDate+InternetDateTime.h */,
@@ -492,6 +502,8 @@
 				172BC8B9145BDAE900FF3415 /* FeedViewController.m in Sources */,
 				17B3C384145C606F003EE78F /* NSString+CamelCaseConversion.m in Sources */,
 				17AE0C8114601E7B00339BFD /* TDBadgedCell.m in Sources */,
+				171B6743150BBE1E003CD612 /* NSArray+PerformSelector.m in Sources */,
+				171B6746150BBE27003CD612 /* SegmentsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
