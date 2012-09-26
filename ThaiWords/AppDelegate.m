@@ -70,7 +70,8 @@
 
 - (void)initializeDataMappping
 {
-    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://active-thai.herokuapp.com"];
+    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:[NSURL URLWithString:@"http://active-thai.herokuapp.com"]];
+//        RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://active-thai.herokuapp.com"];
 //    RKObjectManager* manager = [RKObjectManager objectManagerWithBaseURL:@"http://localhost:3000"];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words" forMethod:RKRequestMethodPOST];
     [[manager router] routeClass:[ThaiWord class] toResourcePath:@"/thai_words/:identifier" forMethod:RKRequestMethodPUT];

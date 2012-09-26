@@ -90,6 +90,13 @@
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
+		177CCEEC159D7E2200A26304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1782719D1458622100F47964 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -171,10 +178,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				177943AE149BA1D200211A52 /* VoiceServices in Frameworks */,
 				177943C4149BA75300211A52 /* CoreData.framework in Frameworks */,
 				177943C2149BA74300211A52 /* Security.framework in Frameworks */,
 				177943C0149BA70B00211A52 /* libxml2.dylib in Frameworks */,
-				177943AE149BA1D200211A52 /* VoiceServices in Frameworks */,
 				177943A6149B9EC100211A52 /* libRestKit.a in Frameworks */,
 				1770623A1459185F004C20EB /* CoreText.framework in Frameworks */,
 				178272051458658F00F47964 /* QuartzCore.framework in Frameworks */,
@@ -328,6 +335,7 @@
 				177943A1149B9EB900211A52 /* RestKitTests.octest */,
 				177943A3149B9EB900211A52 /* RestKit.framework */,
 				177943A5149B9EB900211A52 /* RestKitFrameworkTests.octest */,
+				177CCEED159D7E2200A26304 /* RestKitResources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,6 +461,13 @@
 			fileType = wrapper.cfbundle;
 			path = RestKitFrameworkTests.octest;
 			remoteRef = 177943A4149B9EB900211A52 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		177CCEED159D7E2200A26304 /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = 177CCEEC159D7E2200A26304 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -585,10 +600,15 @@
 		1782719B145861B900F47964 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Xinming Zhao (C7XBZ37ZUQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xinming Zhao (C7XBZ37ZUQ)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThaiWords/ThaiWords-Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SOURCE_ROOT)/RestKit/Build\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -600,6 +620,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3A282336-BE3E-4996-9488-9B2A0FAABF56";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3A282336-BE3E-4996-9488-9B2A0FAABF56";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -610,7 +632,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThaiWords/ThaiWords-Prefix.pch";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
-				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SOURCE_ROOT)/RestKit/Build\"",
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = "ThaiWords/ThaiWords-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

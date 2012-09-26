@@ -1,0 +1,3 @@
+[submodule "ThaiWords/RestKit"]
+	path = ThaiWords/RestKit
+	url = git://github.com/RestKit/RestKit.git
